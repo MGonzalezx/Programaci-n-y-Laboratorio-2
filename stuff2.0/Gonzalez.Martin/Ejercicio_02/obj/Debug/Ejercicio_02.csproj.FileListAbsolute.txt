@@ -1,0 +1,7 @@
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\bin\Debug\Ejercicio_02.exe.config
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\bin\Debug\Ejercicio_02.exe
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\bin\Debug\Ejercicio_02.pdb
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\obj\Debug\Ejercicio_02.csprojAssemblyReference.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\obj\Debug\Ejercicio_02.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\obj\Debug\Ejercicio_02.exe
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Ejercicio_02\obj\Debug\Ejercicio_02.pdb
