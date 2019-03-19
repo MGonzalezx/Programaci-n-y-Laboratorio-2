@@ -1,0 +1,14 @@
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\obj\Debug\Proyecto01.csprojAssemblyReference.cache
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\obj\Debug\Proyecto01.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\bin\Debug\Proyecto01.exe.config
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\bin\Debug\Proyecto01.exe
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\bin\Debug\Proyecto01.pdb
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\obj\Debug\Proyecto01.exe
+D:\VisualStudio\Gonzalez.Martin1\Proyecto01\obj\Debug\Proyecto01.pdb
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\bin\Debug\Proyecto01.exe.config
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\bin\Debug\Proyecto01.exe
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\bin\Debug\Proyecto01.pdb
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\obj\Debug\Proyecto01.csprojAssemblyReference.cache
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\obj\Debug\Proyecto01.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\obj\Debug\Proyecto01.exe
+D:\VisualStudio\Gonzalez.Martin\Proyecto01\obj\Debug\Proyecto01.pdb
