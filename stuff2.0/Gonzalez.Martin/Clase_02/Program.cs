@@ -10,24 +10,19 @@ namespace Clase_02
   {
     static void Main(string[] args)
     {
-      Sello.Mensaje = "Mensaje: Hola";
-      Console.WriteLine("{0}", Sello.Imprimir());
-      Console.ReadLine();
-
-      Sello.Borrar();
-      Console.WriteLine("{0}", Sello.Imprimir());
-      Console.ReadLine();
-
-      Sello.Mensaje = "Mensaje: Hola";
-      Sello.color = ConsoleColor.Magenta;
-      Sello.ImprimirElColor();
-      Console.ReadLine();
-
-      Sello.Mensaje = "Mensaje: Hola";
-      Console.WriteLine("{0}", Sello.Imprimir());
-      Console.ReadLine();
+            Sello.mensaje = "Hola";
+            Sello.color = ConsoleColor.Magenta;
+            Console.WriteLine(Sello.Imprimir());
+            Console.ReadKey();
+            Sello.ImprimirEnColor();
+            Console.ReadKey();
+            Console.WriteLine(Sello.Imprimir());
+            Console.ReadKey();
+            Sello.Borrar();
+            Console.WriteLine(Sello.Imprimir());
+            Console.ReadKey();
 
 
-    }
+        }
   }
 }
