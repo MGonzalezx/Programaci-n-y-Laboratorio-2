@@ -1,0 +1,6 @@
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\bin\Debug\Librerias.dll
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\bin\Debug\Librerias.pdb
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\obj\Debug\Librerias.csprojAssemblyReference.cache
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\obj\Debug\Librerias.csproj.CoreCompileInputs.cache
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\obj\Debug\Librerias.dll
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Librerias\obj\Debug\Librerias.pdb

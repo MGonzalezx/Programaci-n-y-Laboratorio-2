@@ -12,3 +12,6 @@ C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\st
 C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\obj\Debug\Clase_02.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\obj\Debug\Clase_02.exe
 C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\obj\Debug\Clase_02.pdb
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\bin\Debug\Librerias.dll
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\bin\Debug\Librerias.pdb
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase_02\obj\Debug\Clase_02.csproj.CopyComplete

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Librerias;
 
 namespace Clase_02
 {
@@ -21,8 +22,9 @@ namespace Clase_02
             Sello.Borrar();
             Console.WriteLine(Sello.Imprimir());
             Console.ReadKey();
+          Console.WriteLine(Prueba.saludar());
+      Console.ReadKey();
 
-
-        }
+    }
   }
 }
