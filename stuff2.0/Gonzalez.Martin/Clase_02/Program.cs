@@ -24,6 +24,7 @@ namespace Clase_02
             Console.ReadKey();
           Console.WriteLine(Prueba.saludar());
       Console.ReadKey();
+      
 
     }
   }
