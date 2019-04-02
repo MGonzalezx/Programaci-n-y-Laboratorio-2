@@ -28,10 +28,14 @@ namespace Clase04.windowsForms
     private void button1_Click(object sender, EventArgs e)
     {
       Cosa obj1 = new Cosa();
-      MessageBox.Show(obj1.Mostrar());
+      Cosa obj2 = new Cosa(1);
+      Cosa obj3 = new Cosa(1, DateTime.Now.AddDays(15));
+      Cosa obj4 = new Cosa(1, new DateTime(2017,12,9),"HOLA");
+      MessageBox.Show(obj1.Mostrar() + " --- "+ obj2.Mostrar() + "\n" + obj3.Mostrar() + " --- " + obj4.Mostrar());
+      //MessageBox.Show(obj2.Mostrar());
       this.button1.Text = "Boton";
-      this.button1.BackColor= Color.Magenta;
-      this.button1.ForeColor = Color.Orange;
+      //this.button1.BackColor= Color.Magenta;
+      //this.button1.ForeColor = Color.Orange;
     }
   }
 }

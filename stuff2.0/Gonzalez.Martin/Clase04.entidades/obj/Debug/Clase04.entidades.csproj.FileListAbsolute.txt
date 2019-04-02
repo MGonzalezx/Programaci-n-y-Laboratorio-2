@@ -4,3 +4,9 @@ C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonz
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.csproj.CoreCompileInputs.cache
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.dll
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.pdb
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\bin\Debug\Clase04.entidades.dll
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\bin\Debug\Clase04.entidades.pdb
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.csprojAssemblyReference.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.dll
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.entidades\obj\Debug\Clase04.entidades.pdb

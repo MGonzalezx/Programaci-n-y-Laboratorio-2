@@ -11,3 +11,16 @@ C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonz
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.entidades.dll
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.entidades.pdb
 C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.csproj.CopyComplete
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.windowsForms.exe.config
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.windowsForms.exe
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.windowsForms.pdb
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.entidades.dll
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\bin\Debug\Clase04.entidades.pdb
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.csprojAssemblyReference.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.FrmCosa.resources
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.Properties.Resources.resources
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.csproj.GenerateResource.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.csproj.CopyComplete
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.exe
+C:\Users\Martin\Desktop\Programacion II y Lab II\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase04.windowsForms\obj\Debug\Clase04.windowsForms.pdb
