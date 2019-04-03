@@ -1,0 +1,6 @@
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\bin\Debug\Clase05.dll
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\bin\Debug\Clase05.pdb
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\obj\Debug\Clase05.csprojAssemblyReference.cache
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\obj\Debug\Clase05.csproj.CoreCompileInputs.cache
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\obj\Debug\Clase05.dll
+C:\Users\alumno\Desktop\Nueva carpeta\Programaci-n-y-Laboratorio-2\stuff2.0\Gonzalez.Martin\Clase05\obj\Debug\Clase05.pdb

@@ -29,8 +29,8 @@ namespace Clase04.windowsForms
     {
       Cosa obj1 = new Cosa();
       Cosa obj2 = new Cosa(1);
-      Cosa obj3 = new Cosa(1, DateTime.Now.AddDays(15));
-      Cosa obj4 = new Cosa(1, new DateTime(2017,12,9),"HOLA");
+      Cosa obj3 = new Cosa(2, DateTime.Now.AddDays(15));
+      Cosa obj4 = new Cosa(3, new DateTime(2017,12,9),"HOLA");
       MessageBox.Show(obj1.Mostrar() + " --- "+ obj2.Mostrar() + "\n" + obj3.Mostrar() + " --- " + obj4.Mostrar());
       //MessageBox.Show(obj2.Mostrar());
       this.button1.Text = "Boton";
