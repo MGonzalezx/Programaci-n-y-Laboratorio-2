@@ -60,12 +60,13 @@ namespace Clase07
       //MessageBox.Show(Tempera.Mostrar(obj));
 
       this._miTempera = obj;
+            this.DialogResult = DialogResult.OK;
     
     }
 
     private void BtnCancelar_Click(object sender, EventArgs e)
     {
-
+            this.DialogResult = DialogResult.clo;
     }
   }
 }

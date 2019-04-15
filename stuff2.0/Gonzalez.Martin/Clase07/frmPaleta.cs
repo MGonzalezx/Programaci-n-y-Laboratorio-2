@@ -14,26 +14,25 @@ namespace Clase07
 {
   public partial class frmPaleta : Form
   {
-    private Paleta _miPaleta;
 
-    public Paleta MiPaleta
-    {
-      get { return _miPaleta; }
-      //set { _miPaleta = value; }
-    }
-
-
-    public frmPaleta()
+        private Paleta _paleta;
+        public frmPaleta()
     {
       InitializeComponent();
-      this._miPaleta = 5;
+            this._paleta = 5;
     }
 
     private void BtnMas_Click(object sender, EventArgs e)
     {
       frmTempera obj1 = new frmTempera();
       obj1.ShowDialog();
-      this._miPaleta += obj1.MiTempera;
+            if(obj1.DialogResult == DialogResult.OK)
+            {
+                this._paleta += obj1.MiTempera;
+                this.LstLista.Items.Clear();
+                this.LstLista.Items.Add((string)this._paleta);
+                
+            }
       
     }
 
@@ -41,5 +40,10 @@ namespace Clase07
     {
 
     }
-  }
+
+        private void LstLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

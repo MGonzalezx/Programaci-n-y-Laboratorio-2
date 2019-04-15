@@ -49,6 +49,7 @@
             this.LstLista.Name = "LstLista";
             this.LstLista.Size = new System.Drawing.Size(724, 251);
             this.LstLista.TabIndex = 1;
+            this.LstLista.SelectedIndexChanged += new System.EventHandler(this.LstLista_SelectedIndexChanged);
             // 
             // frmPaleta
             // 
