@@ -30,11 +30,12 @@
     {
             this.BtnMas = new System.Windows.Forms.Button();
             this.LstLista = new System.Windows.Forms.ListBox();
+            this.btnMenos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnMas
             // 
-            this.BtnMas.Location = new System.Drawing.Point(354, 258);
+            this.BtnMas.Location = new System.Drawing.Point(209, 259);
             this.BtnMas.Name = "BtnMas";
             this.BtnMas.Size = new System.Drawing.Size(75, 23);
             this.BtnMas.TabIndex = 0;
@@ -51,11 +52,22 @@
             this.LstLista.TabIndex = 1;
             this.LstLista.SelectedIndexChanged += new System.EventHandler(this.LstLista_SelectedIndexChanged);
             // 
+            // btnMenos
+            // 
+            this.btnMenos.Location = new System.Drawing.Point(463, 259);
+            this.btnMenos.Name = "btnMenos";
+            this.btnMenos.Size = new System.Drawing.Size(75, 23);
+            this.btnMenos.TabIndex = 2;
+            this.btnMenos.Text = "-";
+            this.btnMenos.UseVisualStyleBackColor = true;
+            this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
+            // 
             // frmPaleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 293);
+            this.Controls.Add(this.btnMenos);
             this.Controls.Add(this.LstLista);
             this.Controls.Add(this.BtnMas);
             this.Name = "frmPaleta";
@@ -69,6 +81,7 @@
 
     private System.Windows.Forms.Button BtnMas;
     private System.Windows.Forms.ListBox LstLista;
+    private System.Windows.Forms.Button btnMenos;
   }
 }
 

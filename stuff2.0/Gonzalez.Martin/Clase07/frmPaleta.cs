@@ -19,7 +19,9 @@ namespace Clase07
         public frmPaleta()
     {
       InitializeComponent();
-            this._paleta = 5;
+      this._paleta = 5;
+      
+      
     }
 
     private void BtnMas_Click(object sender, EventArgs e)
@@ -45,5 +47,10 @@ namespace Clase07
         {
 
         }
+
+    private void btnMenos_Click(object sender, EventArgs e)
+    {
+
     }
+  }
 }

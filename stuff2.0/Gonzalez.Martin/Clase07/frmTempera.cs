@@ -66,7 +66,7 @@ namespace Clase07
 
     private void BtnCancelar_Click(object sender, EventArgs e)
     {
-            this.DialogResult = DialogResult.clo;
+            this.DialogResult = DialogResult.Cancel;
     }
   }
 }

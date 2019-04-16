@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +8,18 @@ namespace Clase06.entidades
 {
     public class Paleta
     {
-        private Tempera[] _temperas;
-        private int _cantidadMaxima;
-        private Paleta() : this(5)
+    // private Tempera[] _temperas;
+    List<Tempera> tempera;
+    private int _cantidadMaxima;
+    private Paleta() : this(5)
         {
         }
         private Paleta(int cantidad)
         {
-            this._cantidadMaxima = cantidad;
-            this._temperas = new Tempera[cantidad];
-        }
+      this._cantidadMaxima = cantidad;
+      //this._temperas = new Tempera[cantidad];
+         this.tempera = new List<Tempera>(cantidad);
+    }
         public static implicit operator Paleta(int cantidad)
         {
             Paleta paleta = new Paleta(cantidad);
@@ -25,9 +27,9 @@ namespace Clase06.entidades
         }
         private string Mostrar()
         {
-            string retorno = "Cantidad maxima: " + this._cantidadMaxima.ToString() + "\nTemperas: ";
+            string retorno = "Cantidad maxima: " + this._cantidadMaxima.ToString() + "  Temperas: ";
             {
-                foreach (Tempera tempera in this._temperas)
+                foreach (Tempera tempera in this.tempera) //this._temperas)
                 {
                     if (tempera != null)
                     {
@@ -50,7 +52,7 @@ namespace Clase06.entidades
             {
                 retorno = false;
             }
-            foreach(Tempera auxTempera in MiPaleta._temperas)
+            foreach(Tempera auxTempera in MiPaleta.tempera) //_temperas)
             {
                 if(auxTempera == MiTempera)
                 {
@@ -62,9 +64,9 @@ namespace Clase06.entidades
 
         private int ObtenerIndice()
         {
-            for (int i = 0; i < this._temperas.Length; i++)
+            for (int i = 0; i < tempera.Count; i++) //_temperas.Length; i++)
             {
-                if(this._temperas[i] == null)
+                if(this.tempera[i] == null)//_temperas[i] == null)
                 {
                     return i;
                 }
@@ -81,7 +83,7 @@ namespace Clase06.entidades
             int indice = MiPaleta.ObtenerIndice();
             if(MiPaleta != MiTempera && indice != -1)
             {
-                MiPaleta._temperas[indice] = MiTempera;
+              MiPaleta.tempera[indice] = MiTempera;//_temperas[indice] = MiTempera;
             }
             return MiPaleta;
         }
