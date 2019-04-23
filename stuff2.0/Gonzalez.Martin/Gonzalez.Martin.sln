@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehiculosMain", "VehiculosM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lavadero", "Lavadero\Lavadero.csproj", "{2E84F716-9B69-4AA4-B0E6-785DE3428C8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lavadero.Main", "Lavadero.Main\Lavadero.Main.csproj", "{1AC5896F-A362-4D54-854A-1B271635D753}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{2E84F716-9B69-4AA4-B0E6-785DE3428C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E84F716-9B69-4AA4-B0E6-785DE3428C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E84F716-9B69-4AA4-B0E6-785DE3428C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC5896F-A362-4D54-854A-1B271635D753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC5896F-A362-4D54-854A-1B271635D753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC5896F-A362-4D54-854A-1B271635D753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC5896F-A362-4D54-854A-1B271635D753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,7 +19,22 @@ namespace Lavadero
       get { return _vehiculos; }
     }
 
-    private Lavadero()
+        public string MiLavadero
+        {
+            get
+            {
+                string retorno = "Precios vigentes:\nAuto: " + this._precioAuto.ToString() + " - Camion: " + this._precioCamion.ToString();
+                retorno += " - Moto: " + this._precioMoto.ToString() + "\nVehiculos:\n";
+                foreach (Vehiculo vehiculo in this.MisVehiculos)
+                {
+                    retorno += vehiculo.ToString() + "\n";
+                }
+                return retorno;
+            }
+        }
+
+
+        private Lavadero()
     {
       this._vehiculos = new List<Vehiculo>();
     }
@@ -112,10 +127,14 @@ namespace Lavadero
       return retorno;
     }
 
-    public static int OrdenarVehiculosPorPatente(Lavadero vehiculoUno, Vehiculo vehiculoDos)
+     public static int OrdenarVehiculosPorPatente(Vehiculo vehiculoUno, Vehiculo vehiculoDos)
     {
-      int retorno = 0;
-      if(vehiculoUno.)
+            return string.Compare(vehiculoUno.ToString(), vehiculoDos.ToString());
     }
-  }
+
+     public int OrdenarVehiculosPorMarca(Vehiculo vehiculoUno, Vehiculo vehiculoDos)
+       {
+             return vehiculoUno.Marca.CompareTo(vehiculoDos.Marca);     
+        }
+    }
 }
