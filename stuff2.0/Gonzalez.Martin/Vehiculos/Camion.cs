@@ -16,9 +16,17 @@ namespace Vehiculos
       this.Tara = tara;
     }
 
-    public string MostrarCamion()
+    //public string MostrarCamion()
+    //{
+    //  return base.MostrarVehiculo() + " - " + this.Tara.ToString();
+    //}
+
+    #region Con Polimorfismo
+    public override string Mostrar()
     {
-      return base.MostrarVehiculo() + " - " + this.Tara.ToString();
+
+      return base.ToString() + " - " + this.Tara.ToString();
     }
+    #endregion
   }
 }

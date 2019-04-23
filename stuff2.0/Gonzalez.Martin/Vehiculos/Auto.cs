@@ -16,9 +16,17 @@ namespace Vehiculos
       this.CantidadAsientos = cantidadAsientos;
     }
 
-    public string MostrarAuto()
+    //public string MostrarAuto()
+    //{
+    //  return base.MostrarVehiculo() + " - " + this.CantidadAsientos.ToString();
+    //}
+
+    #region Con Polimorfismo
+    public override string Mostrar()
     {
-      return base.MostrarVehiculo() + " - " + this.CantidadAsientos.ToString();
+
+      return base.ToString() +" - " + this.CantidadAsientos.ToString();
     }
-    }
+    #endregion
+  }
 }

@@ -16,9 +16,17 @@ namespace Vehiculos
       this.Cilindrada = cilindrada;
     }
 
-    public string MostrarMoto()
+    //public string MostrarMoto()
+    //{
+    //  return base.MostrarVehiculo()  + " - " + this.Cilindrada.ToString();
+    //}
+
+    #region Con Polimorfismo
+    public override string Mostrar()
     {
-      return base.MostrarVehiculo()  + " - " + this.Cilindrada.ToString();
+
+      return base.ToString() + " - " + this.Cilindrada.ToString();
     }
+    #endregion
   }
 }

@@ -13,26 +13,109 @@ namespace Lavadero
     private float _precioCamion;
     private float _precioMoto;
 
-    private Lavadero _lavadero;
 
-    private string constructor
+    public List<Vehiculo> MisVehiculos
     {
-      set { _lavadero = }
+      get { return _vehiculos; }
     }
 
-    //public Lavadero MiLavadero
-    //{
-    //  get { return _lavadero; }
-    //  //set { _lavadero = value; }
-    //}
-
-    public Lavadero(List<Vehiculo> vehiculos, float precioAuto, float precioCamion, float precioMoto)
+    private Lavadero()
     {
-      this._vehiculos = vehiculos;
+      this._vehiculos = new List<Vehiculo>();
+    }
+
+    public Lavadero( float precioAuto, float precioCamion, float precioMoto): this()
+    {
       this._precioAuto = precioAuto;
       this._precioMoto = precioMoto;
       this._precioCamion = precioCamion;
     }
 
+    public static bool operator ==(Lavadero lavadero, Vehiculo vehiculo)
+    {
+      return lavadero.MisVehiculos.Contains(vehiculo);
+    }
+
+    public static bool operator !=(Lavadero lavadero, Vehiculo vehiculo)
+    {
+      return !(lavadero == vehiculo);
+    }
+
+    public static Lavadero operator +(Lavadero lavadero, Vehiculo vehiculo)
+    {
+      if (lavadero != vehiculo)
+      {
+        lavadero.MisVehiculos.Add(vehiculo);
+      }
+      return lavadero;
+    }
+
+    public static Lavadero operator -(Lavadero lavadero, Vehiculo vehiculo)
+    {
+      if (lavadero == vehiculo)
+      {
+        lavadero.MisVehiculos.Remove(vehiculo);
+      }
+      return lavadero;
+    }
+
+    public double MostrarTotalFacturado()
+    {
+      double retorno = 0;
+      foreach(Vehiculo vehiculo in this.MisVehiculos)
+      {
+        if(vehiculo is Auto)
+        {
+          retorno += this._precioAuto;
+        }else if (vehiculo is Moto)
+        {
+          retorno += this._precioMoto;
+        }else if (vehiculo is Camion)
+        {
+          retorno += this._precioCamion;
+        }
+      }
+      return retorno;
+    }
+
+    public double MostrarTotalFacturado(EVehiculos eVehiculo)
+    {
+      double retorno = 0;
+      if (eVehiculo == EVehiculos.Auto)
+      {
+        foreach (Vehiculo vehiculo in this.MisVehiculos)
+        {
+          if (vehiculo is Auto)
+          {
+            retorno += this._precioAuto;
+          }
+        }
+      }else if(eVehiculo == EVehiculos.Camion)
+      {
+        foreach (Vehiculo vehiculo in this.MisVehiculos)
+        {
+          if (vehiculo is Camion)
+          {
+            retorno += this._precioCamion;
+          }
+        }
+      }else if (eVehiculo == EVehiculos.Moto)
+      {
+        foreach (Vehiculo vehiculo in this.MisVehiculos)
+        {
+          if (vehiculo is Moto)
+          {
+            retorno += this._precioMoto;
+          }
+        }
+      }
+      return retorno;
+    }
+
+    public static int OrdenarVehiculosPorPatente(Lavadero vehiculoUno, Vehiculo vehiculoDos)
+    {
+      int retorno = 0;
+      if(vehiculoUno.)
+    }
   }
 }

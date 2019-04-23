@@ -24,19 +24,14 @@ namespace Lavadero
       this._marca = marca;
     }
 
-    public static bool operator == (Vehiculo patentes, Vehiculo marcas)
+    public static bool operator ==(Vehiculo vehiculoUno, Vehiculo vehiculoDos)
     {
-      bool retorno = false;
-      if (Vehiculo.Equals(patentes, null) && Vehiculo.Equals(marcas, null))
-      {
-        retorno = true;
-      }
-      return retorno;
+      return (vehiculoUno._patente.Equals(vehiculoDos._patente) && vehiculoUno._marca == vehiculoDos._marca);
     }
 
-    public static bool operator !=(Vehiculo patentes, Vehiculo marcas)
+    public static bool operator !=(Vehiculo vehiculoUno, Vehiculo vehiculoDos)
     {
-      return !(patentes == marcas);
+      return !(vehiculoUno == vehiculoDos);
     }
   }
 }

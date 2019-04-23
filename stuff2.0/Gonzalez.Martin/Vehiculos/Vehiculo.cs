@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vehiculos
 {
-  public class Vehiculo
+  public abstract class Vehiculo
   {
     public string Patente;
     public EMarca Marca;
@@ -23,5 +23,17 @@ namespace Vehiculos
     {
       return this.Patente + " - " + this.Marca + " - " + this.CantidadRuedas.ToString();
     }
+
+    #region Con Polimorfismo
+    public virtual string Mostrar()
+    {
+
+      return this.MostrarVehiculo();
+    }
+    public override string ToString()
+    {
+      return this.MostrarVehiculo(); 
+    }
+    #endregion
   }
 }
