@@ -23,19 +23,27 @@ namespace Gonzalez.Martin._2A
 
     protected override string Ficha()
     {
-      if (this.esAlfa == true)
+            string retorno;
+      if (this.esAlfa)
       {
-        return this._nombre + "   " + this._raza + "   " + this.edad.ToString();
+        retorno = this.DatosCompletos() + " alfa de la manada, edad  " + this.edad;
       }
       else
       {
-        return this._nombre + "   " + this._raza + "   " + this.edad.ToString();
+        retorno = this.DatosCompletos() + ", edad " + this.edad;
       }
+            return retorno;
     }
 
       public static bool operator ==(Perro p1, Perro p2)
     {
-      return (p1._nombre.Equals(p2._nombre) && p1._raza.Equals(p2._raza) && p1.edad.Equals(p2.edad));
+      if( (p1._nombre.Equals(p2._nombre) && p1._raza.Equals(p2._raza) && p1.edad.Equals(p2.edad)))
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
     }
     public static bool operator !=(Perro p1, Perro p2)
     {
@@ -49,7 +57,7 @@ namespace Gonzalez.Martin._2A
 
     public override string ToString()
     {
-      return base.DatosCompletos() + "   " + this.edad.ToString() + "   " + this.esAlfa;
+            return this.Ficha();
     }
 
     public override bool Equals(object obj)

@@ -23,7 +23,7 @@ namespace Gonzalez.Martin._2A
 
     protected virtual string DatosCompletos()
     {
-      return this._nombre + "   " + this._raza;
+      return this._nombre + " " + this._raza;
     }
 
     protected abstract string Ficha();

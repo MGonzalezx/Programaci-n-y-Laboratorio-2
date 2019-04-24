@@ -16,7 +16,7 @@ namespace Gonzalez.Martin._2A
 
     protected override string Ficha()
     {
-      return this._nombre + "   " + this._raza;
+      return this.DatosCompletos();
     }
 
     public static bool operator ==(Gato g1, Gato g2)
@@ -30,7 +30,7 @@ namespace Gonzalez.Martin._2A
 
     public override string ToString()
     {
-      return base.DatosCompletos();
+            return this.Ficha();
     }
 
     public override bool Equals(object obj)
