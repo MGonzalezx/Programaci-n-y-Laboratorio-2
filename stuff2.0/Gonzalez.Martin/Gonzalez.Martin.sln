@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lavadero", "Lavadero\Lavade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lavadero.Main", "Lavadero.Main\Lavadero.Main.csproj", "{1AC5896F-A362-4D54-854A-1B271635D753}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase14.Entidades", "Clase14.Entidades\Clase14.Entidades.csproj", "{6F9A2D98-0139-4602-9028-7C532CD2577E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase14.Main", "Clase14.Main\Clase14.Main.csproj", "{53C55CF1-54AA-4CCE-AF32-3A1772DD6255}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +127,14 @@ Global
 		{1AC5896F-A362-4D54-854A-1B271635D753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC5896F-A362-4D54-854A-1B271635D753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC5896F-A362-4D54-854A-1B271635D753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9A2D98-0139-4602-9028-7C532CD2577E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9A2D98-0139-4602-9028-7C532CD2577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9A2D98-0139-4602-9028-7C532CD2577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9A2D98-0139-4602-9028-7C532CD2577E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C55CF1-54AA-4CCE-AF32-3A1772DD6255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C55CF1-54AA-4CCE-AF32-3A1772DD6255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C55CF1-54AA-4CCE-AF32-3A1772DD6255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C55CF1-54AA-4CCE-AF32-3A1772DD6255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
