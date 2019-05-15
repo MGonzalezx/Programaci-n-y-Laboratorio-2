@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,7 +92,12 @@ namespace MiCalculadora
             double calcular = FormCalculadora.Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
             lblResultado.Text = calcular.ToString();
         }
+
+    private void txtNumero1_TextChanged(object sender, EventArgs e)
+    {
+          
     }
+  }
 
 }
     

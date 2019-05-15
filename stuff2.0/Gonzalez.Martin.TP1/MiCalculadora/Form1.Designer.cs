@@ -132,6 +132,7 @@
             this.txtNumero1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNumero1.Size = new System.Drawing.Size(162, 31);
             this.txtNumero1.TabIndex = 1;
+            this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
             // 
             // FormCalculadora
             // 
