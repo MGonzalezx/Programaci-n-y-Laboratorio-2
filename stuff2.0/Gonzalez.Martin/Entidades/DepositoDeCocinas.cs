@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class DepositoDeAutos
+    public class DepositoDeCocinas
     {
         private int _capacidadMaxima;
-        private List<Auto> _lista;
+        private List<Cocina> _lista;
 
-
-        public DepositoDeAutos(int capacidad)
+        public DepositoDeCocinas(int capacidad)
         {
             this._capacidadMaxima = capacidad;
-            this._lista = new List<Auto>();
+            this._lista = new List<Cocina>();
         }
 
-        public static bool operator +(DepositoDeAutos d, Auto a)
+        public static bool operator + (DepositoDeCocinas d, Cocina c)
         {
             bool retorno = false;
-            if (d._capacidadMaxima > d._lista.Count)
+            if(d._capacidadMaxima > d._lista.Count)
             {
-                d._lista.Add(a);
+                d._lista.Add(c);
                 retorno = true;
             }
             return retorno;
         }
 
-        private int GetIndice(Auto a)
+        private int GetIndice(Cocina c)
         {
             for (int i = 0; i < this._lista.Count; i++)
             {
-                if (this._lista[i] == a)
+                if (this._lista[i] == c)
                 {
                     return i;
                 }
@@ -41,35 +40,35 @@ namespace Entidades
             return -1;
         }
 
-        public static bool operator -(DepositoDeAutos d, Auto a)
+        public static bool operator - (DepositoDeCocinas d, Cocina c)
         {
-           if(d.GetIndice(a) != -1)
+            if(d.GetIndice(c) != -1)
             {
-                d._lista.RemoveAt(d.GetIndice(a));
+                d._lista.RemoveAt(d.GetIndice(c));
                 return true;
             }
             else
             {
                 return false;
             }
-
-        }
-         public bool Agregar (Auto a)
-        {
-            return this + a;
         }
 
-        public bool Remover(Auto a)
+        public bool Agregar (Cocina c)
         {
-            return this - a;
+            return this + c;
+        }
+
+        public bool Remover(Cocina c)
+        {
+            return this - c;
         }
 
         public override string ToString()
         {
             string cadena;
             cadena = "Capacidad maxima: " + this._capacidadMaxima + "\n";
-            cadena += "Listado de Autos: \n";
-            foreach (Auto a in this._lista)
+            cadena += "Listado de Cocinas: \n";
+            foreach (Cocina a in this._lista)
             {
                 cadena += a.ToString();
             }

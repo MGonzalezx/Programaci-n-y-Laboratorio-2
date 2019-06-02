@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class DepositoDeAutos
+    public class Deposito<T>
     {
         private int _capacidadMaxima;
-        private List<Auto> _lista;
+        private List<T> _lista;
 
-
-        public DepositoDeAutos(int capacidad)
+        public Deposito(int capacidad)
         {
             this._capacidadMaxima = capacidad;
-            this._lista = new List<Auto>();
+            this._lista = new List<T>();
         }
 
-        public static bool operator +(DepositoDeAutos d, Auto a)
+        public static bool operator +(Deposito<T> d, T a)
         {
             bool retorno = false;
             if (d._capacidadMaxima > d._lista.Count)
@@ -29,11 +28,11 @@ namespace Entidades
             return retorno;
         }
 
-        private int GetIndice(Auto a)
+        private int GetIndice(T d)
         {
             for (int i = 0; i < this._lista.Count; i++)
             {
-                if (this._lista[i] == a)
+                if (this._lista[i].Equals(d))
                 {
                     return i;
                 }
@@ -41,9 +40,9 @@ namespace Entidades
             return -1;
         }
 
-        public static bool operator -(DepositoDeAutos d, Auto a)
+        public static bool operator - (Deposito<T> d, T a)
         {
-           if(d.GetIndice(a) != -1)
+            if (d.GetIndice(a) != -1)
             {
                 d._lista.RemoveAt(d.GetIndice(a));
                 return true;
@@ -52,26 +51,26 @@ namespace Entidades
             {
                 return false;
             }
-
         }
-         public bool Agregar (Auto a)
+
+        public bool Agregar(T a)
         {
             return this + a;
         }
 
-        public bool Remover(Auto a)
+        public bool Remover(T b)
         {
-            return this - a;
+            return this - b;
         }
 
         public override string ToString()
         {
             string cadena;
             cadena = "Capacidad maxima: " + this._capacidadMaxima + "\n";
-            cadena += "Listado de Autos: \n";
-            foreach (Auto a in this._lista)
+            cadena += "Listado de " + typeof(T).Name + ": \n";
+            foreach (T objeto in this._lista)
             {
-                cadena += a.ToString();
+                cadena += objeto.ToString();
             }
             return cadena;
         }
