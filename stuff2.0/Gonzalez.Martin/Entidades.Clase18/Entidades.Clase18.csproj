@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Alumno.cs" />
     <Compile Include="Humano.cs" />
+    <Compile Include="ISerializableBinario.cs" />
+    <Compile Include="ISerializableXML.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
