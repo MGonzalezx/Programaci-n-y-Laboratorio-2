@@ -11,19 +11,28 @@ namespace Clase19SQL.Test
   {
     static void Main(string[] args)
     {
-      List<Persona> l = new List<Persona>();
+      
       AccesoDatos datos = new AccesoDatos();
-      l = datos.TraerTodos();
+            //List<Persona> l = new List<Persona>();
+            //l = datos.TraerTodos();
 
-      foreach (Persona item in l)
-      {
-        Console.WriteLine(item.ToString());
-      }
-      Console.ReadLine();
+            //foreach (Persona item in l)
+            //{
+            //  Console.WriteLine(item.ToString());
+            //}
 
-      List<Persona> l2 = new List<Persona>();
-      l2 = datos.AgregarPersona(p);
 
+            Persona p = new Persona(10, "Santiago", "Gonzalez", 40);
+            if (datos.AgregarPersona(p) == true)
+            {
+                Console.WriteLine("Se agregó una persona");
+            }
+            else
+            {
+                Console.WriteLine("No se pudo agregar la persona");
+            }
+
+            Console.ReadLine();
     }
   }
 }

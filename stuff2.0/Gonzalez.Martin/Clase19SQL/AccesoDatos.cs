@@ -73,7 +73,14 @@ namespace Clase19SQL
       {
         throw;
       }
+            finally
+            {
+                if (this._conexion.State == ConnectionState.Open)
+                {
+                    this._conexion.Close();
+                }
+            }
 
-    }
+        }
   }
 }
