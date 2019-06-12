@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase19SQL", "Clase19SQL\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase19SQL.Test", "Clase19SQL.Test\Clase19SQL.Test.csproj", "{B6028985-E8A3-4E49-9344-FB8ADA09C4DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmListado.Clase19SQL", "frmListado\frmListado.Clase19SQL.csproj", "{6C68221C-BB13-4A1C-98CB-45F65125C054}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,10 @@ Global
 		{B6028985-E8A3-4E49-9344-FB8ADA09C4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6028985-E8A3-4E49-9344-FB8ADA09C4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6028985-E8A3-4E49-9344-FB8ADA09C4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
