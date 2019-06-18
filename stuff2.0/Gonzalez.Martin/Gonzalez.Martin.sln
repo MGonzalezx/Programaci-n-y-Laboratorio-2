@@ -61,6 +61,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase19SQL.Test", "Clase19S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmListado.Clase19SQL", "frmListado\frmListado.Clase19SQL.csproj", "{6C68221C-BB13-4A1C-98CB-45F65125C054}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase20.WindowsForm", "Clase20.WindowsForm\Clase20.WindowsForm.csproj", "{0CE808FD-372D-4854-8077-872E6CB4F60A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase20.WindowsForm2", "Clase20.WindowsForm2\Clase20.WindowsForm2.csproj", "{60733C7A-818F-46B1-95A6-44E7A7F590CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +187,14 @@ Global
 		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C68221C-BB13-4A1C-98CB-45F65125C054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE808FD-372D-4854-8077-872E6CB4F60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE808FD-372D-4854-8077-872E6CB4F60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE808FD-372D-4854-8077-872E6CB4F60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE808FD-372D-4854-8077-872E6CB4F60A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60733C7A-818F-46B1-95A6-44E7A7F590CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60733C7A-818F-46B1-95A6-44E7A7F590CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60733C7A-818F-46B1-95A6-44E7A7F590CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60733C7A-818F-46B1-95A6-44E7A7F590CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
