@@ -15,12 +15,12 @@ namespace Clase20.WindowsForm
     public frmTest()
     {
       InitializeComponent();
-      this.lblEtiqueta.Click += new System.EventHandler(Manejadora.Manejador);
+            Manejadora m = new Manejadora();
+            this.lblEtiqueta.Click += new EventHandler(m.Manejador2);
+            this.lblEtiqueta.Click += new System.EventHandler(Manejadora.Manejador);
       this.txtCuadroTexto.Click += new System.EventHandler(Manejadora.Manejador);
       this.btnBoton.Click += new System.EventHandler(Manejadora.Manejador);
-      this.lblEtiqueta.Click += new System.EventHandler(Manejadora.Manejador);
-      this.txtCuadroTexto.Click += new System.EventHandler(Manejadora.Manejador);
-      this.btnBoton.Click += new System.EventHandler(Manejadora.Manejador);
+      
     }
 
     private void MostrarMensaje(object sender, EventArgs e)
