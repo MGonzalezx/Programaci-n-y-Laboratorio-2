@@ -44,7 +44,7 @@ namespace Clase20.WindowsForm2
         this.btnBoton1.Click += new System.EventHandler(this.MiManejador);
       }
     }
-       public delegate void MiDelegado(int a, int b);
+       
 
         public static void Sumar(int a, int b)
         {
