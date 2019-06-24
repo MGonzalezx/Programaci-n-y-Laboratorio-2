@@ -48,7 +48,7 @@ namespace Clase21.Entidades
     //POLIMORFISMO
     public override string ToString()
     {
-      return  this._nombre + " - " + this._legajo.ToString() + " - " + this._sueldo.ToString();
+        return "Nombre: " + this._nombre + " - Legajo: " + this._legajo.ToString() + " - Sueldo: " + this._sueldo.ToString();
     }
 
   }

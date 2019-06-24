@@ -14,8 +14,11 @@ namespace Clase21
   {
     static void Main(string[] args)
     {
-      Persona p1 = new Persona("Juan", "Gomez", 20, Entidades.Alumnos.ESexo.Indefinido);
-      
-    }
+            Persona persona = new Persona("Juan", "Perez", 20, Entidades.Alumnos.ESexo.Masculino);
+            PersonaExternaSellada personaDos = new PersonaExternaSellada("Juan", "Perez", 20, Entidades.Externa.Sellada.ESexo.Masculino);
+            Console.WriteLine(Extensora.Extensora.Mostrar(personaDos));
+            Console.ReadKey();
+
+        }
   }
 }

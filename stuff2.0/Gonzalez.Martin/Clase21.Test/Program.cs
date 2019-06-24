@@ -13,12 +13,12 @@ namespace Clase21.Test
   {
     static void Main(string[] args)
     {
-      Empleado empleado = new Empleado();
-      empleado.limiteSueldo += new DelegadoSueldo(limiteSueldoEmpleado);
-      empleado.limiteSueldo += new DelegadoSueldo(GuardarLog);
-      empleado.Nombre = "Juan";
-      empleado.Legajo = 123;
-      empleado.Sueldo = 15000;
+      //Empleado empleado = new Empleado();
+      //empleado.limiteSueldo += new DelegadoSueldo(limiteSueldoEmpleado);
+      //empleado.limiteSueldo += new DelegadoSueldo(GuardarLog);
+      //empleado.Nombre = "Juan";
+      //empleado.Legajo = 123;
+      //empleado.Sueldo = 15000;
 
      
 
@@ -27,8 +27,8 @@ namespace Clase21.Test
     }
     private static void limiteSueldoEmpleado(Empleado e, float b)
     {
-      Console.WriteLine(" Empleado: " + e.ToString() + " Sueldo asignado: " + b.ToString());
-    }
+            Console.WriteLine("Al empleado " + e.Nombre + "\nSe le quizo asignar un sueldo de " + b.ToString());
+        }
       public static void GuardarLog(Empleado e, float b)
     {
       try

@@ -6,48 +6,51 @@ using System.Threading.Tasks;
 
 namespace Clase21.Entidades
 {
-  public class EmpleadoMejorado
-  {
-    private string _nombre;
-    private int _legajo;
-    private float _sueldo;
-    //PALABRA RESERVADA EVENT
-    public event DelSueldo limiteSueldo;
-    //Necesitamos que el event se dispare.
-
-    //Eventos, atributos, propiedades, metodos
-
-    //PROPIEDADES
-    public string Nombre
+    public class EmpleadoMejorado
     {
-      get { return this._nombre; }
-      set { this._nombre = value; }
-    }
+        private string _nombre;
+        private int _legajo;
+        private float _sueldo;
+        //PALABRA RESERVADA EVENT
+        public event DelSueldo limiteSueldo;
+        //Necesitamos que el event se dispare.
 
-    public int Legajo
-    {
-      get { return this._legajo; }
-      set { this._legajo = value; }
-    }
+        //Eventos, atributos, propiedades, metodos
 
-    public float Sueldo
-    {
-      get { return this._sueldo; }
-      set
-      {
-        if (value > 12000)
+        //PROPIEDADES
+        public string Nombre
         {
-          
+            get { return this._nombre; }
+            set { this._nombre = value; }
         }
-        this._sueldo = value;
-      }
-    }
+
+        public int Legajo
+        {
+            get { return this._legajo; }
+            set { this._legajo = value; }
+        }
+
+        public float Sueldo
+        {
+            get { return this._sueldo; }
+            set
+            {
+                if (value > 12000)
+                {
+                    EmpleadoSueldoArgs args = new EmpleadoSueldoArgs();
+                    args.Sueldo = value;
+                    this.limiteSueldo(this, args);
+
+                }
+                this._sueldo = value;
+            }
+        }
 
 
-    //POLIMORFISMO
-    public override string ToString()
-    {
-      return this._nombre + " - " + this._legajo.ToString() + " - " + this._sueldo.ToString();
+        //POLIMORFISMO
+        public override string ToString()
+        {
+            return "Nombre: " + this._nombre + " - Legajo: " + this._legajo.ToString() + " - Sueldo: " + this._sueldo.ToString();
+        }
     }
-  }
 }

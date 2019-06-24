@@ -9,13 +9,13 @@ namespace Entidades.Alumnos
 {
    public static class Extensora
   {
-    //Metodo comun.
-    //public static retorno nombre ( "requiere un paramaetro que hace
-    //referencia a la clase a la cual yo voy a agregarle a este metodo" this clase....)
-    //{}
-    public static string Mostrar(this PersonaExternaSellada persona)
-    {
-      
+        //Metodo comun.
+        //public static retorno nombre ( "requiere un paramaetro que hace
+        //referencia a la clase a la cual yo voy a agregarle a este metodo" this clase....)
+        //{}
+        public static string Mostrar(this PersonaExternaSellada p)
+        {
+            return p.Nombre;
+        }
     }
-  }
 }
