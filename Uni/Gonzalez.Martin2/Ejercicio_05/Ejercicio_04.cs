@@ -13,7 +13,7 @@ namespace Ejercicio_04
             /* Un número perfecto es un entero positivo, que es igual a la suma de todos los enteros positivos
             (excluido el mismo) que son divisores del número.
             El primer número perfecto es 6, ya que los divisores de 6 son 1, 2 y 3; y 1 + 2 + 3 = 6.
-            Escribir una aplicación que encuentre los 4 primeros números perfectos.*/
+            Escribir una aplicación que encuentre los 4 primeros números perfectos.*/ 
             Console.Title = "Ejercicio Nro 4";
             int i; //Los numeros que vamos a verificar
             int j; //Vamos a dividir i con los numeros de J
