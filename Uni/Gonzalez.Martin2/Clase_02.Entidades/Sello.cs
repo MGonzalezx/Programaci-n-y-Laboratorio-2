@@ -13,8 +13,8 @@ namespace Clase_02.Entidades
 
         public static string Imprimir()
         {
-            Console.WriteLine(Sello.ArmarFormatoMensaje());
-            return Sello.mensaje;
+           
+            return Sello.ArmarFormatoMensaje();
              
         }
 
