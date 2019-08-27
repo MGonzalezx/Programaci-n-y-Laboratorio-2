@@ -25,10 +25,11 @@ namespace Ejercicio_16
         }
         public void CalcularFinal()
         {
-            Random auxiliar = new Random();
-            float nota = auxiliar.Next(1, 10);
+            
             if (nota1 >= 4 && nota2 >= 4 )
             {
+                Random auxiliar = new Random();
+                float nota = auxiliar.Next(1, 10);
 
                 this.notaFinal = nota;
                 
@@ -47,12 +48,12 @@ namespace Ejercicio_16
             {
                 return "Nombre: " + this.nombre + " - Apellido: " + this.apellido + " - Legajo: " +
                 this.legajo.ToString() + "\n - Nota1: " + this.nota1.ToString() + " - Nota2: " +
-                this.nota2.ToString() + "\n - Nota Final: Alumno desaprobado" + "\n";
+                this.nota2.ToString() + " - Nota Final: Alumno desaprobado" + "\n";
             }else
             {
                 return "Nombre: " + this.nombre + " - Apellido: " + this.apellido + " - Legajo: " +
                 this.legajo.ToString() + "\n - Nota1: " + this.nota1.ToString() + " - Nota2: " +
-                this.nota2.ToString() + "\n - Nota Final: " + this.notaFinal.ToString() + "\n";
+                this.nota2.ToString() + " - Nota Final: " + this.notaFinal.ToString() + "\n";
             }
             
         }
