@@ -13,7 +13,7 @@ namespace Ejercicio_11
         {
            bool retorno = true;
            if (valor >= -100 && valor <= 100)
-            //if (Enumerable.Range(min, max).Contains(valor))
+            //if (Enumerable.Range(-100, 100).Contains(valor))
             {
                 return retorno;
             }

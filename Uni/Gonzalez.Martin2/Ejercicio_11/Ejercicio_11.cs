@@ -23,6 +23,7 @@ namespace Ejercicio_11
             float mayor = 0;
             float menor = 0;
             float promedio;
+            bool auxiliar;
 
             Console.WriteLine("Ingrese sus 10 numeros: ");
             for (i = 0; i < 10; i++)
@@ -31,22 +32,26 @@ namespace Ejercicio_11
                 numero = int.Parse(Console.ReadLine());
 
                 Validacion.Validar(numero, -100, 100);
+                auxiliar = Validacion.Validar(numero, -100, 100);
+                if (auxiliar == true)
+                {
+                    acumulador = acumulador + numero;
 
-                acumulador = acumulador + numero;
-
-                if (i == 0)
-                {
-                    mayor = numero;
-                    menor = numero;
+                    if (i == 0)
+                    {
+                        mayor = numero;
+                        menor = numero;
+                    }
+                    if (numero > mayor)
+                    {
+                        mayor = numero;
+                    }
+                    else if (numero < menor)
+                    {
+                        menor = numero;
+                    }
                 }
-                if (numero > mayor)
-                {
-                    mayor = numero;
-                }
-                else if (numero < menor)
-                {
-                    menor = numero;
-                }
+                
             }
 
             promedio = acumulador / i;
