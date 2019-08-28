@@ -36,6 +36,9 @@
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.btnCrear = new System.Windows.Forms.Button();
             this.lstLista = new System.Windows.Forms.ListBox();
+            this.btnRojo = new System.Windows.Forms.Button();
+            this.btnNegro = new System.Windows.Forms.Button();
+            this.btnAzul = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -105,11 +108,44 @@
             this.lstLista.Size = new System.Drawing.Size(333, 199);
             this.lstLista.TabIndex = 7;
             // 
+            // btnRojo
+            // 
+            this.btnRojo.Location = new System.Drawing.Point(185, 352);
+            this.btnRojo.Name = "btnRojo";
+            this.btnRojo.Size = new System.Drawing.Size(75, 23);
+            this.btnRojo.TabIndex = 8;
+            this.btnRojo.Text = "Rojo";
+            this.btnRojo.UseVisualStyleBackColor = true;
+            this.btnRojo.Click += new System.EventHandler(this.btnRojo_Click);
+            // 
+            // btnNegro
+            // 
+            this.btnNegro.Location = new System.Drawing.Point(267, 352);
+            this.btnNegro.Name = "btnNegro";
+            this.btnNegro.Size = new System.Drawing.Size(75, 23);
+            this.btnNegro.TabIndex = 9;
+            this.btnNegro.Text = "Negro";
+            this.btnNegro.UseVisualStyleBackColor = true;
+            this.btnNegro.Click += new System.EventHandler(this.btnNegro_Click);
+            // 
+            // btnAzul
+            // 
+            this.btnAzul.Location = new System.Drawing.Point(348, 352);
+            this.btnAzul.Name = "btnAzul";
+            this.btnAzul.Size = new System.Drawing.Size(75, 23);
+            this.btnAzul.TabIndex = 10;
+            this.btnAzul.Text = "Azul";
+            this.btnAzul.UseVisualStyleBackColor = true;
+            this.btnAzul.Click += new System.EventHandler(this.btnAzul_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 387);
+            this.Controls.Add(this.btnAzul);
+            this.Controls.Add(this.btnNegro);
+            this.Controls.Add(this.btnRojo);
             this.Controls.Add(this.lstLista);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.txtFecha);
@@ -135,6 +171,9 @@
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.ListBox lstLista;
+        private System.Windows.Forms.Button btnRojo;
+        private System.Windows.Forms.Button btnNegro;
+        private System.Windows.Forms.Button btnAzul;
     }
 }
 

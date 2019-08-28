@@ -29,5 +29,20 @@ namespace Clase_04.WindowsForm
             lstLista.Items.Add(objeto.Monstrar());
             MessageBox.Show(objeto.Monstrar());
         }
+
+        private void btnRojo_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Red;
+        }
+
+        private void btnNegro_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+        }
+
+        private void btnAzul_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Blue;
+        }
     }
 }
