@@ -26,8 +26,7 @@ namespace Clase_04.WindowsForm
         private void btnCrear_Click(object sender, EventArgs e)
         {
             Cosa objeto = new Cosa(this.txtCadena.Text,DateTime.Parse(this.txtFecha.Text),int.Parse(this.txtEntero.Text));
-            
-
+            lstLista.Items.Add(objeto.Monstrar());
             MessageBox.Show(objeto.Monstrar());
         }
     }

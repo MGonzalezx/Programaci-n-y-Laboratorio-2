@@ -35,6 +35,7 @@
             this.txtCadena = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.lstLista = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +89,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(90, 168);
+            this.btnCrear.Location = new System.Drawing.Point(90, 352);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 6;
@@ -96,11 +97,20 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // lstLista
+            // 
+            this.lstLista.FormattingEnabled = true;
+            this.lstLista.Location = new System.Drawing.Point(90, 147);
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(333, 199);
+            this.lstLista.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 251);
+            this.ClientSize = new System.Drawing.Size(435, 387);
+            this.Controls.Add(this.lstLista);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.txtCadena);
@@ -124,6 +134,7 @@
         private System.Windows.Forms.TextBox txtCadena;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.ListBox lstLista;
     }
 }
 
