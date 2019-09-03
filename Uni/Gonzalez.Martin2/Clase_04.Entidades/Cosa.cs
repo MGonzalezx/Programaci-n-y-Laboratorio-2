@@ -32,7 +32,7 @@ namespace Clase_04.Entidades
             //this.fecha = DateTime.Now;
         }
 
-        public Cosa( string str, DateTime fecha) :this(str)
+        public Cosa(string str, DateTime fecha) :this(str)
         {
             //this.entero = -1;
             //this.cadena = str;
