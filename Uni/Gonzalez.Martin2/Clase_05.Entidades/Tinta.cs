@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clase_05.Entidades
 {
-    /// <summary>
-    /// Esta clase servira para practicar
-    /// </summary>
+    
     public class Tinta
     {
         //VARIABLES
@@ -16,19 +14,13 @@ namespace Clase_05.Entidades
         private ETipoTinta _tipo;
 
         #region Constructores
-        /// <summary>
-        /// Color->blue
-        /// tipo->Comun
-        /// </summary>
+        
         public Tinta()
         {
             this._color = ConsoleColor.Blue;
             this._tipo = ETipoTinta.comun;
         }
-        /// <summary>
-        /// color->blue
-        /// </summary>
-        /// <param name="tinta">sera el valor del tipo</param>
+        
         public Tinta(ETipoTinta tinta) : this()
         {
             this._tipo = tinta;
@@ -41,21 +33,13 @@ namespace Clase_05.Entidades
         #endregion
 
         #region Metodos
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        
         private string Mostrar()
         {
-            return "Tinta: " + this._tipo + " - Color: " + this._color + "\n";
+            return "Tinta: " + this._tipo.ToString() + " - Color: " + this._color.ToString() + "\n";
         }
 
-        /// <summary>
-        /// asdfasdfasdf
-        /// </summary>
-        /// <param name="ver">asdfasdf</param>
-        /// <param name="a">asdfasdf</param>
-        /// <returns></returns>
+        
         public static string Mostrar(Tinta ver)
         {
             return ver.Mostrar();
@@ -65,11 +49,18 @@ namespace Clase_05.Entidades
         #region Operadores
         public static bool operator ==(Tinta tinta1, Tinta tinta2)
         {
+            
             if (!object.Equals(tinta1, null) && !object.Equals(tinta2, null))
             {
-                return ;
+                return true;
+            }else if (object.Equals(tinta1, null) && object.Equals(tinta2, null))
+            {
+                return true;
+            }else if (object.Equals(tinta1, null) && !object.Equals(tinta2, null) || !object.Equals(tinta1, null) && object.Equals(tinta2, null))
+            {
+                return false;
             }
-            
+            return tinta1 == tinta2;
         }
         public static bool operator !=(Tinta tinta1, Tinta tinta2)
         {
