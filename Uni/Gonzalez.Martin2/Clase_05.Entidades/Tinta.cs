@@ -49,18 +49,19 @@ namespace Clase_05.Entidades
         #region Operadores
         public static bool operator ==(Tinta tinta1, Tinta tinta2)
         {
-            
+
             if (!object.Equals(tinta1, null) && !object.Equals(tinta2, null))
             {
-                return true;
-            }else if (object.Equals(tinta1, null) && object.Equals(tinta2, null))
-            {
-                return true;
-            }else if (object.Equals(tinta1, null) && !object.Equals(tinta2, null) || !object.Equals(tinta1, null) && object.Equals(tinta2, null))
-            {
-                return false;
+                //logica de negocio
+                return tinta1._tipo == tinta2._tipo;
             }
-            return tinta1 == tinta2;
+            else
+            {
+
+                return Object.Equals(tinta1, tinta2);
+
+            }
+            
         }
         public static bool operator !=(Tinta tinta1, Tinta tinta2)
         {
