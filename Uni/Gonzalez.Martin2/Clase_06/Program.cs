@@ -11,9 +11,11 @@ namespace Clase_06
     {
         static void Main(string[] args)
         {
-            Paleta a = 3;
+            Paleta a = 6;
+            Tempera b = new Tempera(ConsoleColor.Black, "marca", 6);
+            
             //Paleta b = new Paleta(3);
-            Console.WriteLine(a);
+            Console.WriteLine(b, a);
 
            
 

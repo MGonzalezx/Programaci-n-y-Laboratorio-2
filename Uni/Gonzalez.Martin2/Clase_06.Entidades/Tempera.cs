@@ -61,6 +61,12 @@ namespace Clase_06.Entidades
                return tempera;
         }
 
+        public static Tempera operator -(Tempera tempera, int cantidad)
+        {
+            tempera.cantidad -= cantidad;
+            return tempera;
+        }
+
         //SI TEMPERA SON IGUALES INCREMENTA CANTIDAD
         public static Tempera operator +(Tempera tempera1, Tempera tempera2)
         {
@@ -68,6 +74,18 @@ namespace Clase_06.Entidades
             {
 
                 tempera1 += tempera2.cantidad;
+
+            }
+            return tempera1;
+        }
+        //SI TEMPERA SON IGUALES DECREMENTA CANTIDAD
+        public static Tempera operator -(Tempera tempera1, Tempera tempera2)
+        {
+            if (tempera1 == tempera2)
+            {
+
+                tempera1 -= tempera2.cantidad;
+  
 
             }
             return tempera1;

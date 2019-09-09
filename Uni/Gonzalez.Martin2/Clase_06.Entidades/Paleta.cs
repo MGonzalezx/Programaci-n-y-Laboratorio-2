@@ -14,9 +14,9 @@ namespace Clase_06.Entidades
         #endregion
 
         #region Constructor
-        private Paleta() : this (5)
+        private Paleta() : this(5)
         {
-            
+
         }
         private Paleta(int cantidadMaximaColores)
         {
@@ -45,7 +45,7 @@ namespace Clase_06.Entidades
 
         private int ObtenerLugarLibre()
         {
-            for (int i = 0; i < colores.Length; i++) 
+            for (int i = 0; i < colores.Length; i++)
             {
                 if (this.colores[i] == null)
                 {
@@ -97,19 +97,19 @@ namespace Clase_06.Entidades
         public static Paleta operator +(Paleta paleta, Tempera tempera)
         {
             int indice = paleta.ObtenerLugarLibre();
-            if(paleta != tempera && indice != -1)
+            if (paleta != tempera && indice != -1)
             {
-                 paleta.colores[indice] = tempera;
+                paleta.colores[indice] = tempera;
             }
             if (paleta == tempera)
             {
                 paleta.colores[indice] += tempera;
             }
-              return paleta;
+            return paleta;
         }
 
         //RETORNA EL INDICE DE LA TEMPERA SI LA TEMPERA ESTA EN LA PALETA
-        public static int operator | (Paleta paleta, Tempera tempera)
+        public static int operator |(Paleta paleta, Tempera tempera)
         {
             for (int i = 0; i < paleta.colores.Length; i++)
             {
@@ -123,9 +123,19 @@ namespace Clase_06.Entidades
 
         //SI LA TEMPERA SE ENCUENTRA EN LA PALETA, DECREMENTAR LAS CANTIDADES
         //SI CUANDO LA ESTOY QUITANDO Y LA RESTA ME DA 0 O MENOS QUE 0, ESE LUGAR QUEDA EN NULL
-        public static int operator -(Paleta paleta, Tempera tempera)
+        public static Paleta operator -(Paleta paleta, Tempera tempera)
         {
-
+            int indice = paleta.ObtenerLugarLibre();
+            if (paleta == tempera)
+            {
+                paleta.colores[indice] -= tempera;
+                if (Convert.ToInt32(paleta.colores[indice]) <= 0)
+                {
+                    paleta.colores[indice] = null;
+                }
+            }
+            
+            return paleta;
         }
         #endregion
     }
