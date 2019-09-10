@@ -49,7 +49,7 @@ namespace Clase_06.WindowsForms
             {
                 this.miPaleta += tempera.MiTempera;
 
-                this.listBox1.Items.Add(this.miPaleta);
+                this.listBox1.Items.Add((string)this.miPaleta);
             }
             
         }
