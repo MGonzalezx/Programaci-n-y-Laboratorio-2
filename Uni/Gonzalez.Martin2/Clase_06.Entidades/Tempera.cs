@@ -43,12 +43,16 @@ namespace Clase_06.Entidades
         public static bool operator ==(Tempera tempera1, Tempera tempera2)
         {
             bool retorno = false;
-            if(tempera1.marca == tempera2.marca && tempera1.color == tempera2.color)
+            if(Tempera.Equals(tempera1, null) && Tempera.Equals(tempera2, null))
             {
                 return retorno = true;
             }
-            return retorno;
-            
+             else if ((Tempera.Equals(tempera1, null) && Tempera.Equals(tempera2, null) == false) || (Tempera.Equals(tempera1, null) == false && Tempera.Equals(tempera2, null)))
+            {
+                return false;
+            }
+            return (tempera1.color == tempera2.color && tempera1.marca.Equals(tempera2.marca));
+
         }
         public static bool operator !=(Tempera tempera1, Tempera tempera2)
         {
@@ -85,6 +89,10 @@ namespace Clase_06.Entidades
             {
 
                 tempera1 -= tempera2.cantidad;
+                if(tempera1.cantidad <= 0)
+                {
+                    tempera1 = null;
+                }
   
 
             }

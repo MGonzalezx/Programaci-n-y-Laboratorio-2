@@ -44,5 +44,10 @@ namespace Clase_04.WindowsForm
         {
             this.BackColor = Color.Blue;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,6 +75,7 @@ namespace Clase_06.Entidades
             bool retorno = false;
             if (Paleta.Equals(paleta, null) || Paleta.Equals(tempera, null))
             {
+                
                 return retorno;
             }
             foreach (Tempera auxTempera in paleta.colores)
@@ -129,10 +130,10 @@ namespace Clase_06.Entidades
             if (paleta == tempera)
             {
                 paleta.colores[indice] -= tempera;
-                if (Convert.ToInt32(paleta.colores[indice]) <= 0)
-                {
-                    paleta.colores[indice] = null;
-                }
+                //if (Convert.ToInt32(paleta.colores[indice]) <= 0)
+                //{
+                //    paleta.colores[indice] = null; 
+                //}
             }
             
             return paleta;
