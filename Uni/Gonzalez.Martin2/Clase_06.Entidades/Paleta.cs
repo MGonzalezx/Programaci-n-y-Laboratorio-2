@@ -13,6 +13,14 @@ namespace Clase_06.Entidades
         private int cantidadMaximaColores;
         #endregion
 
+        public Tempera this[int index]
+        {
+            get { return this.colores[index]; }
+            set { this.colores[index] = value; }
+        }
+
+        public int CantidadMaximaColores { get { return this.cantidadMaximaColores; }  }
+
         #region Constructor
         private Paleta() : this(5)
         {
@@ -75,7 +83,7 @@ namespace Clase_06.Entidades
             bool retorno = false;
             if (Paleta.Equals(paleta, null) || Paleta.Equals(tempera, null))
             {
-                
+
                 return retorno;
             }
             foreach (Tempera auxTempera in paleta.colores)
@@ -102,7 +110,8 @@ namespace Clase_06.Entidades
             {
                 paleta.colores[indice] = tempera;
             }
-            if (paleta == tempera)
+            else
+                if (paleta == tempera)
             {
                 paleta.colores[indice] += tempera;
             }
@@ -135,7 +144,7 @@ namespace Clase_06.Entidades
                 //    paleta.colores[indice] = null; 
                 //}
             }
-            
+
             return paleta;
         }
         #endregion

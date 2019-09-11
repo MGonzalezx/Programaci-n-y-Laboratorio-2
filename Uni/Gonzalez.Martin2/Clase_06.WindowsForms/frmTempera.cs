@@ -33,6 +33,12 @@ namespace Clase_06.WindowsForms
             //PARA QUE EL USUARIO NO PUEDA ESCRIBIR EN EL COMBOBOX
             this.cmbColor.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        public frmTempera(Tempera t) : this()
+        {
+            this.txtMarca.Text = t.Marca;
+            this.txtCantidad.Text = t.Cantidad.ToString();
+            this.cmbColor.Text = t.Color.ToString();
+        }
 
         private void frmTempera_Load(object sender, EventArgs e)
         {
@@ -56,6 +62,7 @@ namespace Clase_06.WindowsForms
 
             this.miTempera = new Tempera(color, this.txtMarca.Text, 
                 int.Parse(this.txtCantidad.Text));
+
             this.DialogResult = DialogResult.OK;
 
             //MessageBox.Show(miTempera);

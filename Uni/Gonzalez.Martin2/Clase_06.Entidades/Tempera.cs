@@ -14,6 +14,10 @@ namespace Clase_06.Entidades
         private int cantidad;
         #endregion
 
+        public string Marca { get { return this.marca; }  }
+        public ConsoleColor Color { get { return this.color; } }
+        public int Cantidad { get { return this.cantidad; } }
+
         #region Constructores
         public Tempera(ConsoleColor color, string marca, int cantidad)
         {
@@ -42,10 +46,10 @@ namespace Clase_06.Entidades
         //MARCA Y COLOR SEAN IGUALES
         public static bool operator ==(Tempera tempera1, Tempera tempera2)
         {
-            bool retorno = false;
+           
             if(Tempera.Equals(tempera1, null) && Tempera.Equals(tempera2, null))
             {
-                return retorno = true;
+                return true;
             }
              else if ((Tempera.Equals(tempera1, null) && Tempera.Equals(tempera2, null) == false) || (Tempera.Equals(tempera1, null) == false && Tempera.Equals(tempera2, null)))
             {
