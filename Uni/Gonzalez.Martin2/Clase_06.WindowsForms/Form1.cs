@@ -121,6 +121,7 @@ namespace Clase_06.WindowsForms
             tempera.ShowDialog();
             if (tempera.DialogResult == DialogResult.OK)
             {
+                this.listBox1.Items.Clear();
                 this.miPaleta[this.listBox1.SelectedIndex] = tempera.MiTempera;
                 this.listBox1.Items.Insert(this.listBox1.SelectedIndex, (string)this.miPaleta);
             }
