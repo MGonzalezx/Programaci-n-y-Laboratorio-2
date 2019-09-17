@@ -17,8 +17,22 @@ namespace Clase_07.Entidades
         #region Propiedades
         public string Titulo { get { return this.titulo; } }
         public string Autor { get { return this.autor; } }
-        public int CantidadDePaginas { get{ } }
-        public int CantidadDeCapitulos { get { } }
+        public int CantidadDePaginas
+        {
+            get
+            {
+                
+                foreach (Capitulo titulo in capitulos) 
+                {
+                    int suma;
+                    suma += titulo.Paginas;
+                   return suma;
+                }
+                
+                
+            }
+        }
+        public int CantidadDeCapitulos { get { return this.capitulos.Count; } }
         #endregion
 
         #region Constructores
@@ -37,11 +51,19 @@ namespace Clase_07.Entidades
         //capitulo en dicho indice
         public Capitulo this[int index]
         {
-            get { if (index < 0 || index > this.capitulos[index]
+            get
+            {
+                Capitulo auxiliar = null;
+                if (index < 0 || index > this.capitulos.Count)
                 {
-
+                     return auxiliar;
+                    
+                }else if(index == this.capitulos.Count)
+                {
+                    return auxiliar = capitulos[index];
                 }
-                }
+                return auxiliar;
+            }
             set { /* set the specified index to value here */ }
         }
         #endregion
