@@ -48,7 +48,7 @@ namespace Ejercicio_17
 
         public bool Pintar(short gasto, out string dibujo)
         {
-            this.SetTinta(gasto)
+            this.SetTinta(gasto);
         }
         #endregion
     }
