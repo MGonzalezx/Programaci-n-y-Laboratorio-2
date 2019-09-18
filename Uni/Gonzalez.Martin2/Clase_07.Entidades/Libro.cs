@@ -19,17 +19,21 @@ namespace Clase_07.Entidades
         public string Autor { get { return this.autor; } }
         public int CantidadDePaginas
         {
+
             get
             {
-                
-                foreach (Capitulo titulo in capitulos) 
+               
+                foreach (Capitulo titulo in capitulos)
                 {
-                    int suma;
+
+                    int suma = 0;
                     suma += titulo.Paginas;
-                   return suma;
+                    return suma;
+
+
                 }
-                
-                
+
+
             }
         }
         public int CantidadDeCapitulos { get { return this.capitulos.Count; } }
@@ -56,9 +60,10 @@ namespace Clase_07.Entidades
                 Capitulo auxiliar = null;
                 if (index < 0 || index > this.capitulos.Count)
                 {
-                     return auxiliar;
-                    
-                }else if(index == this.capitulos.Count)
+                    return auxiliar;
+
+                }
+                else if (index == this.capitulos.Count)
                 {
                     return auxiliar = capitulos[index];
                 }
@@ -66,6 +71,7 @@ namespace Clase_07.Entidades
             }
             set { /* set the specified index to value here */ }
         }
+
         #endregion
 
     }
