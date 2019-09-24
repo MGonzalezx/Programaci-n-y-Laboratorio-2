@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupAlumnos = new System.Windows.Forms.GroupBox();
+            this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCalificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupAlumnosCalificados = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.groupAlumnos.SuspendLayout();
             this.groupAlumnosCalificados.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,15 @@
             this.groupAlumnos.TabStop = false;
             this.groupAlumnos.Text = "Alumnos";
             // 
+            // cmbOrden
+            // 
+            this.cmbOrden.FormattingEnabled = true;
+            this.cmbOrden.Location = new System.Drawing.Point(30, 311);
+            this.cmbOrden.Name = "cmbOrden";
+            this.cmbOrden.Size = new System.Drawing.Size(592, 21);
+            this.cmbOrden.TabIndex = 4;
+            this.cmbOrden.SelectedIndexChanged += new System.EventHandler(this.cmbOrden_SelectedIndexChanged);
+            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(547, 19);
@@ -71,6 +80,7 @@
             this.btnCalificar.TabIndex = 2;
             this.btnCalificar.Text = "Calificar";
             this.btnCalificar.UseVisualStyleBackColor = true;
+            this.btnCalificar.Click += new System.EventHandler(this.btnCalificar_Click);
             // 
             // btnAgregar
             // 
@@ -107,14 +117,6 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(592, 212);
             this.listBox2.TabIndex = 1;
-            // 
-            // cmbOrden
-            // 
-            this.cmbOrden.FormattingEnabled = true;
-            this.cmbOrden.Location = new System.Drawing.Point(30, 311);
-            this.cmbOrden.Name = "cmbOrden";
-            this.cmbOrden.Size = new System.Drawing.Size(592, 21);
-            this.cmbOrden.TabIndex = 4;
             // 
             // FrmCatedra
             // 

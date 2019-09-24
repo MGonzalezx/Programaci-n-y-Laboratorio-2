@@ -44,8 +44,8 @@ namespace Clase_08.WindowsForms
             this.miAlumno = new Alumno(this.txtNombre.Text, this.txtApellido.Text,
                 int.Parse(this.txtLegajo.Text), examen);
 
-            
-            //if (this.miAlumno.Legajo == this.miAlumno.Legajo)
+
+            //if (int.Parse(this.txtLegajo.Text) == this.miAlumno.Legajo)
             //{
             //    MessageBox.Show("Legajo ya ingresado", "ERROR",
             //    MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -25,6 +25,8 @@ namespace Clase_08.WindowsForms
             }
             this.cmbOrden.SelectedItem = ETipoOrdenamiento.LegajoAscendente;
             this.cmbOrden.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.miCatedra = new Catedra();
+            this.misAlumnos = new List<AlumnoCalificado>();
         }
 
         private void FrmCatedra_Load(object sender, EventArgs e)
@@ -39,27 +41,41 @@ namespace Clase_08.WindowsForms
             alumno.ShowDialog();
 
             if (alumno.DialogResult == DialogResult.OK)
-
             {
-                //String prueba = (alumno.MiAlumno.Nombre + " " + alumno.MiAlumno.Apellido + " " + alumno.MiAlumno.Legajo.ToString() + " " + alumno.MiAlumno.Examen.ToString());
+                //for (int i = 0; i < this.miCatedra.Alumnos.Count; i++)
+                //{
+                //    if ( == alumno.MiAlumno.Legajo)
+                //    {
 
-                //this.listBox1.Items.Add(prueba);
-                //this.listBox1.Items.Add(alumno.MiAlumno);
-                //this.listBox1.DisplayMember(alumno.MiAlumno);
+                //    }
+                //}
+                if (!(this.miCatedra + alumno.MiAlumno))
+                {
+                    MessageBox.Show("No se pudo agregar", "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                this.ActualizarListadoAlumnos();
 
-                    this.miCatedra += alumno.MiAlumno;
-                
-                    for (int i = 0; i < this.miCatedra.Alumnos.Count; i++)
-                    {
-                        if (this.miCatedra.Alumnos[i] != null)
-                        {
-                            this.listBox1.Items.Add(this.miCatedra.Alumnos[i]);
-                        }
-
-                    }
-                
- 
             }
+        }
+        private void ActualizarListadoAlumnos()
+        {
+            this.listBox1.Items.Clear();
+            for (int i = 0; i < this.miCatedra.Alumnos.Count; i++)
+            {
+                this.listBox1.Items.Add(this.miCatedra.Alumnos[i]);
+            }
+            
+        }
+        private void btnCalificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbOrden_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

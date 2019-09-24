@@ -37,7 +37,12 @@ namespace Clase_08.Entidades
         public static string Mostrar(Alumno a)
         {
             return "Nombre: " + a.nombre + " - Apellido: " + a.apellido + " - Legajo: " + a.legajo.ToString() +
-                " - Tipo De Examen: " + a.examen.ToString(); 
+                " - Tipo De Examen: " + a.examen.ToString();
+        }
+
+        public override string ToString()
+        {
+            return Alumno.Mostrar(this);
         }
 
         public static int OrdenarPorApellidoAsc(Alumno a, Alumno b)

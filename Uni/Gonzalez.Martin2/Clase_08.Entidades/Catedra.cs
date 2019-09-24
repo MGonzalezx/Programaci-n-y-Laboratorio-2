@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clase_08.Entidades;
 
 namespace Clase_08.Entidades
 {
@@ -19,7 +20,19 @@ namespace Clase_08.Entidades
         #region Constructores
         public Catedra()
         {
-            alumnos = new List<Alumno>();
+            this.alumnos = new List<Alumno>();
+        }
+        #endregion
+
+        #region Metodos
+        public override string ToString()
+        {
+            
+            foreach(Alumno auxAlumno in alumnos)
+            {
+               return Alumno.Mostrar(auxAlumno);
+            }
+            return "\n";
         }
         #endregion
 
@@ -27,15 +40,6 @@ namespace Clase_08.Entidades
         public static bool operator ==(Catedra c, Alumno a)
         {
             bool retorno = false;
-            //if (Catedra.Equals(c, null) && Alumno.Equals(a, null))
-            //{
-            //    return retorno = true;
-            //}
-            //else if ((Catedra.Equals(c, null) && Alumno.Equals(a, null) == false) ||
-            //        (Catedra.Equals(c, null) == false && Alumno.Equals(a, null)))
-            //{
-            //    return retorno;
-            //}
             foreach (Alumno auxAlumno in c.alumnos)
             {
                 if (auxAlumno == a)
@@ -43,7 +47,6 @@ namespace Clase_08.Entidades
                     return retorno = true;
                 }
             }
-
             return retorno;
         }
 

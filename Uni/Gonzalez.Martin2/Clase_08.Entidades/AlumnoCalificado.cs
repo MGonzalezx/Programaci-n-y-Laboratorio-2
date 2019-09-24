@@ -32,6 +32,11 @@ namespace Clase_08.Entidades
         {
             return Alumno.Mostrar(this) + " - Nota: " + this.nota.ToString() + "\n";
         }
+
+        public override string ToString()
+        {
+            return this.Mostrar();//Alumno.Mostrar(this) + " - Nota: " + this.nota.ToString() + "\n"; 
+        }
         #endregion
     }
 }
