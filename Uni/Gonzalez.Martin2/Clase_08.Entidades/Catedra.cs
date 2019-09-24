@@ -59,11 +59,12 @@ namespace Clase_08.Entidades
             {
                 return retorno;
             }
-            else
+            else 
             {
                 c.alumnos.Add(a);
                 return retorno = true;
-            }
+            } 
+            
         }
 
         public static int operator |(Alumno a, Catedra c)
