@@ -69,7 +69,7 @@ namespace Clase_08.WindowsForms
             this.listBox2.Items.Clear();
             for (int i = 0; i < this.misAlumnos.Count; i++)
             {
-                this.listBox2.Items.Add(this.miCatedra.Alumnos[i]);
+                this.listBox2.Items.Add(this.misAlumnos[i]);
             }
         }
 
@@ -82,29 +82,30 @@ namespace Clase_08.WindowsForms
 
             if (alumnoCalificado.DialogResult == DialogResult.OK)
             {
-                
-                // this.miCatedra.Alumnos[this.listBox1.SelectedIndex] = alumnoCalificado.MiAlumnoCalificado;
-                ////this.listBox2.Items.Add(this.miCatedra.Alumnos);
-                // this.listBox1.Items.Insert(this.listBox1.SelectedIndex, this.miCatedra.Alumnos);//this.misAlumnos);
-                // this.listBox2.Items.Add(this.listBox1.SelectedIndex);
-                // this.ActualizarListadoAlumnosCalificados();
-                // this.ActualizarListadoAlumnos();
+                this.misAlumnos.Add(alumnoCalificado.MiAlumnoCalificado);
+               
+
+                if (!(this.miCatedra - this.miCatedra.Alumnos[this.listBox1.SelectedIndex]))
+                {
+                    MessageBox.Show("No se pudo agregar", "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                this.ActualizarListadoAlumnosCalificados();
+
+                 this.ActualizarListadoAlumnos();
 
             }
         }
 
         private void cmbOrden_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //FrmAlumno alumno = new FrmAlumno();
             ETipoOrdenamiento orden = (ETipoOrdenamiento)this.cmbOrden.SelectedItem;
-            //Alumno nuevo = new Alumno(alumno.MiAlumno.Nombre, alumno.MiAlumno.Apellido, alumno.MiAlumno.Legajo, alumno.MiAlumno.Examen);
-            //"ApellidoAscendente"
-            //switch (cmbOrden.SelectedItem.ToString().Trim())
 
             //switch (orden)
             //{
             //    case ETipoOrdenamiento.ApellidoAscendente:
-                    
+
             //        Alumno.OrdenarPorApellidoAsc(,);
             //        this.ActualizarListadoAlumnos();
             //        break;

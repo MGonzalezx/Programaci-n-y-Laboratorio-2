@@ -48,7 +48,7 @@ namespace Clase_08.Entidades
         public static int OrdenarPorApellidoAsc(Alumno a, Alumno b)
         {
             int retorno;
-            retorno = a.apellido.CompareTo(b);
+            retorno = a.apellido.CompareTo(b.apellido);
             return retorno;
         }
 
