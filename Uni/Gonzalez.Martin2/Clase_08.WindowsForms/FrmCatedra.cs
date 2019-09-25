@@ -27,6 +27,7 @@ namespace Clase_08.WindowsForms
             this.cmbOrden.DropDownStyle = ComboBoxStyle.DropDownList;
             this.miCatedra = new Catedra();
             this.misAlumnos = new List<AlumnoCalificado>();
+
         }
 
         private void FrmCatedra_Load(object sender, EventArgs e)
@@ -42,13 +43,7 @@ namespace Clase_08.WindowsForms
 
             if (alumno.DialogResult == DialogResult.OK)
             {
-                //for (int i = 0; i < this.miCatedra.Alumnos.Count; i++)
-                //{
-                //    if ( == alumno.MiAlumno.Legajo)
-                //    {
 
-                //    }
-                //}
                 if (!(this.miCatedra + alumno.MiAlumno))
                 {
                     MessageBox.Show("No se pudo agregar", "ERROR",
@@ -58,6 +53,7 @@ namespace Clase_08.WindowsForms
 
             }
         }
+
         private void ActualizarListadoAlumnos()
         {
             this.listBox1.Items.Clear();
@@ -65,17 +61,83 @@ namespace Clase_08.WindowsForms
             {
                 this.listBox1.Items.Add(this.miCatedra.Alumnos[i]);
             }
-            
+
         }
+
+        private void ActualizarListadoAlumnosCalificados()
+        {
+            this.listBox2.Items.Clear();
+            for (int i = 0; i < this.misAlumnos.Count; i++)
+            {
+                this.listBox2.Items.Add(this.miCatedra.Alumnos[i]);
+            }
+        }
+
         private void btnCalificar_Click(object sender, EventArgs e)
         {
+            FrmAlumnoCalificado alumnoCalificado = new FrmAlumnoCalificado(this.miCatedra.Alumnos[this.listBox1.SelectedIndex]);
 
+            alumnoCalificado.ShowDialog();
+
+
+            if (alumnoCalificado.DialogResult == DialogResult.OK)
+            {
+                
+                // this.miCatedra.Alumnos[this.listBox1.SelectedIndex] = alumnoCalificado.MiAlumnoCalificado;
+                ////this.listBox2.Items.Add(this.miCatedra.Alumnos);
+                // this.listBox1.Items.Insert(this.listBox1.SelectedIndex, this.miCatedra.Alumnos);//this.misAlumnos);
+                // this.listBox2.Items.Add(this.listBox1.SelectedIndex);
+                // this.ActualizarListadoAlumnosCalificados();
+                // this.ActualizarListadoAlumnos();
+
+            }
         }
 
         private void cmbOrden_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
+            //FrmAlumno alumno = new FrmAlumno();
+            ETipoOrdenamiento orden = (ETipoOrdenamiento)this.cmbOrden.SelectedItem;
+            //Alumno nuevo = new Alumno(alumno.MiAlumno.Nombre, alumno.MiAlumno.Apellido, alumno.MiAlumno.Legajo, alumno.MiAlumno.Examen);
+            //"ApellidoAscendente"
+            //switch (cmbOrden.SelectedItem.ToString().Trim())
+
+            //switch (orden)
+            //{
+            //    case ETipoOrdenamiento.ApellidoAscendente:
+                    
+            //        Alumno.OrdenarPorApellidoAsc(,);
+            //        this.ActualizarListadoAlumnos();
+            //        break;
+            //    case ETipoOrdenamiento.ApellidoDescendente:
+            //        Alumno.OrdenarPorApellidoDesc(,);
+            //        this.ActualizarListadoAlumnos();
+            //        break;
+            //    case ETipoOrdenamiento.LegajoAscendente:
+            //        Alumno.OrdenarPorLegajoAsc(,);
+            //        this.ActualizarListadoAlumnos();
+            //        break;
+            //    case ETipoOrdenamiento.LegajoDescendente:
+            //        Alumno.OrdenarPorLegajoDesc(,);
+            //        this.ActualizarListadoAlumnos();
+            //        break;
+            //}
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FrmAlumno alumno = new FrmAlumno(this.miCatedra.Alumnos[this.listBox1.SelectedIndex]);
+
+            alumno.ShowDialog();
+      
+            if (alumno.DialogResult == DialogResult.OK)
+            {
+                //this.listBox1.Items.Clear();
+                this.miCatedra.Alumnos[this.listBox1.SelectedIndex] = alumno.MiAlumno;
+                this.listBox1.Items.Insert(this.listBox1.SelectedIndex, this.miCatedra.Alumnos);
+                this.ActualizarListadoAlumnos();
+                
+            }
         }
     }
 }

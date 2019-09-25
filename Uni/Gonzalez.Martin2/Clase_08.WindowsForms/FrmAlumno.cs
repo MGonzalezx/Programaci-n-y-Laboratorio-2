@@ -35,7 +35,9 @@ namespace Clase_08.WindowsForms
             this.txtApellido.Text = a.Apellido;
             this.txtLegajo.Text = a.Legajo.ToString();
             this.cmbTipoExamen.Text = a.Examen.ToString();
+            this.txtLegajo.Enabled = false;
         }
+        
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

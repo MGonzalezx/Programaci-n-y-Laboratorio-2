@@ -74,6 +74,9 @@
     <EmbeddedResource Include="FrmAlumno.resx">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlumnoCalificado.resx">
+      <DependentUpon>FrmAlumnoCalificado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCatedra.resx">
       <DependentUpon>FrmCatedra.cs</DependentUpon>
     </EmbeddedResource>
