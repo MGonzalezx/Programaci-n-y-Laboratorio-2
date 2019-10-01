@@ -26,7 +26,7 @@ namespace CentralitaPolimorismo.Entidades
             _listaDeLlamadas = new List<Llamada>();
         }
 
-        public Centralita(string nombreEmpresa) :this()
+        public Centralita(string nombreEmpresa) : this()
         {
             this._razonSocial = nombreEmpresa;
         }
@@ -35,7 +35,17 @@ namespace CentralitaPolimorismo.Entidades
         #region Metodos
         public override string ToString()
         {
-            return "Nombre Empresa: " + this._razonSocial + "Llamadas: " + this._listaDeLlamadas.ToString(); ;
+            string telefono = " ";
+            string empresa = " ";
+            foreach (Llamada llamadas in this._listaDeLlamadas)
+            {
+
+                telefono += "Nro Origen: " + llamadas.NroOrigen.ToString() + " Nro Destino: " + llamadas.NroDestino.ToString() + " Duracion: " + llamadas.Duracion.ToString() + " Costo: " + llamadas.CostoLlamada.ToString() + "\n";
+
+                //telefono += llamadas.NroOrigen.ToString() + " " + llamadas.NroDestino.ToString() + " " + llamadas.Duracion.ToString() + " " + llamadas.CostoLlamada.ToString() + "\n";
+                empresa = "Nombre Empresa: " + this._razonSocial + "\n" + "Llamadas: " + telefono + "\n";
+            }
+            return empresa;
         }
 
         private void AgregarLlamada(Llamada llamadaNueva)
@@ -46,24 +56,61 @@ namespace CentralitaPolimorismo.Entidades
         private float CalcularGanancia(ETipoLlamada tipo)
         {
             float ganancia = 0;
-            foreach(Llamada llamadas in this._listaDeLlamadas)
+            foreach (Llamada llamadas in this._listaDeLlamadas)
             {
-                if(llamadas is Local)
+                if (llamadas is Local)
                 {
                     return ganancia += llamadas.CostoLlamada;
-     
-                }else if(llamadas is Provincial)
+
+                }
+                else if (llamadas is Provincial)
                 {
-                     return ganancia += llamadas.CostoLlamada;   
+                    return ganancia += llamadas.CostoLlamada;
                 }
             }
             return ganancia;
-            
+
         }
 
         public void OrdenarLlamadas()
         {
             this._listaDeLlamadas.Sort();
+        }
+
+        #endregion
+
+        #region Operadores
+        public static bool operator ==(Centralita central, Llamada nuevaLlamada)
+        {
+            bool retorno = false;
+            foreach (Llamada auxllamada in central._listaDeLlamadas)
+            {
+                if (auxllamada == nuevaLlamada)
+                {
+                    return retorno = true;
+                }
+            }
+            return retorno;
+
+        }
+
+        public static bool operator !=(Centralita central, Llamada nuevaLlamada)
+        {
+            return !(central == nuevaLlamada);
+        }
+
+        public static Centralita operator +(Centralita central, Llamada nuevaLlamada)
+        {
+            if (central != nuevaLlamada)
+            {
+                central.AgregarLlamada(nuevaLlamada);
+            }
+            //}else
+            //{
+            //   return "Llamada ya ingresada"
+
+            //}
+            return central;
         }
         #endregion
     }

@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CentralitaPolimorismo.Entidades\CentralitaPolimorismo.Entidades.csproj">
+      <Project>{08c960ed-e92b-4f9b-9496-54df17a8a21b}</Project>
+      <Name>CentralitaPolimorismo.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
