@@ -62,8 +62,9 @@ namespace CentralitaPolimorismo.Entidades
 
         protected override string Mostrar()
         {
-            StringBuilder costoLlamada = new StringBuilder("Franja Horaria: "+ this._franjaHoraria.ToString() +" - " + "Costo llamada: " + this.CostoLlamada);
-            return base.Mostrar() + costoLlamada;
+            StringBuilder costoLlamada = new StringBuilder("Franja Horaria: "+ this._franjaHoraria.ToString() +" - " 
+                + "Costo llamada: " + this.CostoLlamada);
+            return base.Mostrar() + costoLlamada + "\n";
         }
         public override string ToString()
         {

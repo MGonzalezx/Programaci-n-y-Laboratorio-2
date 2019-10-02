@@ -14,9 +14,9 @@ namespace CentralitaPolimorismo.Entidades
         #endregion
 
         #region Propiedades
-        public float GananciaPorLocal { get; }
-        public float GananciaPorProvincial { get; }
-        public float GananciaTotal { get; }
+        public float GananciaPorLocal { get { return this.CalcularGanancia(ETipoLlamada.Local); } }
+        public float GananciaPorProvincial { get { return this.CalcularGanancia(ETipoLlamada.Provincial); } }
+        public float GananciaTotal { get { return this.CalcularGanancia(ETipoLlamada.Local) + this.CalcularGanancia(ETipoLlamada.Provincial); } }
         public List<Llamada> Llamadas { get { return this._listaDeLlamadas; } }
         #endregion
 
@@ -37,15 +37,15 @@ namespace CentralitaPolimorismo.Entidades
         {
             string telefono = " ";
             string empresa = " ";
+            empresa = "Nombre Empresa: " + this._razonSocial + "\n" + "Llamadas:\n";
             foreach (Llamada llamadas in this._listaDeLlamadas)
             {
 
-                telefono += "Nro Origen: " + llamadas.NroOrigen.ToString() + " Nro Destino: " + llamadas.NroDestino.ToString() + " Duracion: " + llamadas.Duracion.ToString() + " Costo: " + llamadas.CostoLlamada.ToString() + "\n";
+                telefono += llamadas.ToString() + "\n\n";
 
-                //telefono += llamadas.NroOrigen.ToString() + " " + llamadas.NroDestino.ToString() + " " + llamadas.Duracion.ToString() + " " + llamadas.CostoLlamada.ToString() + "\n";
-                empresa = "Nombre Empresa: " + this._razonSocial + "\n" + "Llamadas: " + telefono + "\n";
             }
-            return empresa;
+            return empresa + telefono + "\n" + "Ganancia por Local: " + this.GananciaPorLocal.ToString()
+                    + " Ganancial por Provincial: " + this.GananciaPorProvincial.ToString() + " Ganancia Total: " + this.GananciaTotal.ToString();
         }
 
         private void AgregarLlamada(Llamada llamadaNueva)
@@ -55,18 +55,32 @@ namespace CentralitaPolimorismo.Entidades
 
         private float CalcularGanancia(ETipoLlamada tipo)
         {
+            float gananciaLocal = 0;
+            float gananciaProvincial = 0;
             float ganancia = 0;
             foreach (Llamada llamadas in this._listaDeLlamadas)
             {
                 if (llamadas is Local)
                 {
-                    return ganancia += llamadas.CostoLlamada;
+                    gananciaLocal += llamadas.CostoLlamada;
 
                 }
                 else if (llamadas is Provincial)
                 {
-                    return ganancia += llamadas.CostoLlamada;
+                    gananciaProvincial += llamadas.CostoLlamada;
                 }
+            }
+            if (tipo == ETipoLlamada.Local)
+            {
+                 ganancia += gananciaLocal;
+            }
+            else if (tipo == ETipoLlamada.Provincial)
+            {
+                 ganancia += gananciaProvincial;
+            }
+            else if (tipo == ETipoLlamada.Todas)
+            {
+                ganancia = gananciaProvincial + gananciaLocal;
             }
             return ganancia;
 

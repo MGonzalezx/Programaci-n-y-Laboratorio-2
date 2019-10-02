@@ -34,7 +34,7 @@ namespace CentralitaPolimorismo.Entidades
              //string value = "Numero de Origen: " + this._nroOrigen + " - Numero de Destino: " + this._nroDestino +
              //   " - Duracion: " + this._duracion.ToString() + "\n";
             StringBuilder retorno = new StringBuilder("Numero de Origen: " + this._nroOrigen + " - Numero de Destino: " + this._nroDestino +
-                " - Duracion: " + this._duracion.ToString() + "\n");
+                " - Duracion: " + this._duracion.ToString() + " \n");
             return retorno.ToString();
             
         }

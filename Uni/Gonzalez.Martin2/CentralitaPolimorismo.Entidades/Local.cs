@@ -51,7 +51,7 @@ namespace CentralitaPolimorismo.Entidades
         
         protected override string Mostrar()
         {
-            StringBuilder costoLlamada = new StringBuilder("Costo llamada: "+ this.CostoLlamada);
+            StringBuilder costoLlamada = new StringBuilder(" Costo llamada: "+ this.CostoLlamada);
             return base.Mostrar() + costoLlamada;
         }
 

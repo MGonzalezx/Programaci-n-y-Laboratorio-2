@@ -18,10 +18,10 @@ namespace CentralitaPolimorfismo
             Provincial provincial2 = new Provincial(EFranja.Franja_03, provincial1);
 
             central += local1;
-            central += local2;
             central += provincial1;
+            central += local2;
             central += provincial2;
-            Console.WriteLine(central);
+            Console.WriteLine(central.ToString());
             Console.ReadLine();
         }
     }
