@@ -15,8 +15,8 @@ namespace Test.Entidades
         #endregion
 
         #region Propiedades
-        public List<Alumno> Alumnos { get { return this._alumnos; } }
-        public EMateria Nombre { get { return this._nombre; } }
+        public List<Alumno> Alumnos { get { return this._alumnos; } set { } }
+        public EMateria Nombre { get { return this._nombre; } set { } }
         #endregion
 
         #region Constructores

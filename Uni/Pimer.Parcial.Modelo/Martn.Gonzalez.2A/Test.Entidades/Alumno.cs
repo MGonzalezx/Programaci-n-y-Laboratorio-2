@@ -16,9 +16,9 @@ namespace Test.Entidades
         #endregion
 
         #region Propiedades
-        public string Apellido { get { return this._apellido; } }
-        public int Legajo { get { return this._legajo; } }
-        public string Nombre { get { return this._nombre; } }
+        public string Apellido { get { return this._apellido; } set { } }
+        public int Legajo { get { return this._legajo; } set { } }
+        public string Nombre { get { return this._nombre; } set { } }
         public float Nota
         {
             get { return this._nota; }
