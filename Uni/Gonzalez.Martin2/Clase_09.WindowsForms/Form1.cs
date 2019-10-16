@@ -39,7 +39,6 @@ namespace Clase_09.WindowsForms
             Environment.SpecialFolder ubicacion = (Environment.SpecialFolder)this.cmbUbicacion.SelectedItem;
             StreamReader reader = new StreamReader(Environment.GetFolderPath(ubicacion) + @"\" + this.txtNombreArchivo.Text);
             string contenido;
-            //contenido = reader.ReadToEnd();
             while ((contenido = reader.ReadToEnd()) != null)
             {
                 MessageBox.Show(contenido.ToString());
