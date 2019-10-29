@@ -15,7 +15,7 @@ namespace Clase_11.Main
     {
         static void Main(string[] args)
         {
-            //Persona miPersona = new Persona("Juan", "Pereza");
+            //Persona miPersona = new Persona("Juan", "Perez",10);
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Persona.xml";
             ////vamos a necesitar un objeto que sepa serializar cualquier objeto
             ////Para usar el type de una clase hacemos typeof()
