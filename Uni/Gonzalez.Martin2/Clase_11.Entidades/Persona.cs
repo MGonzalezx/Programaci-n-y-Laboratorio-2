@@ -8,8 +8,12 @@ using System.Xml;
 
 namespace Clase_11.Entidades
 {
+    //Para que las clases que ereden de esta funcionen
+    [XmlInclude(typeof(Alumno))]
+    [XmlInclude(typeof(Empleado))]
+
     public class Persona : IXML
-    {
+    {  
         public string nombre;
         public string apellido;
         private int edad;

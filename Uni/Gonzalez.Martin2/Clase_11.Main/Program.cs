@@ -122,13 +122,21 @@ namespace Clase_11.Main
             Persona miPersona2 = new Persona("Juana", "Pereza", 12);
             Persona miPersona3 = new Persona("Dudis", "Fludis", 13);
             Empleado miEmpleado1 = new Empleado("Ricardo", "Martinez", 40, 111, 1000);
-            Alumno miAlumno1 = new Alumno("Dudisa", "Fludisa", 20, 10);
+            Empleado miEmpleado2 = new Empleado("Alberto", "Mujica", 45, 222, 2000);
+            Empleado miEmpleado3 = new Empleado("Romina", "Perez", 35, 333, 3000);
+            Alumno miAlumno1 = new Alumno("Matias", "Argento", 20, 10);
+            Alumno miAlumno2 = new Alumno("Xaria", "Romanov", 17, 7);
+            Alumno miAlumno3 = new Alumno("Danilo", "Fiorentino", 18, 8);
 
             miListaPersona.Add(miPersona1);
             miListaPersona.Add(miPersona2);
             miListaPersona.Add(miPersona3);
             miListaPersona.Add(miEmpleado1);
+            miListaPersona.Add(miEmpleado2);
+            miListaPersona.Add(miEmpleado3);
             miListaPersona.Add(miAlumno1);
+            miListaPersona.Add(miAlumno2);
+            miListaPersona.Add(miAlumno3);
 
             try
             {
