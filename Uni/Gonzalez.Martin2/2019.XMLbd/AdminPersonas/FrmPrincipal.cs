@@ -22,6 +22,7 @@ namespace AdminPersonas
         SqlConnection connection;
         SqlCommand comando;
         SqlDataReader lector;
+        DataTable tablaPersonas;
 
         public FrmPrincipal()
         {
@@ -30,7 +31,29 @@ namespace AdminPersonas
             this.IsMdiContainer = true;
             this.WindowState = FormWindowState.Maximized;
             this.lista = new List<Persona>();
+            this.tablaPersonas = new DataTable("Personas");
+            this.CargarDataTable();
             
+            
+        }
+
+        private void CargarDataTable()
+        {
+            this.Conectar();
+            this.comando.CommandType = CommandType.Text;
+            this.comando.CommandText = "SELECT TOP 1000[id] ,[nombre] ,[apellido] ,[edad] FROM[personas_bd].[dbo].[personas]";
+            this.lector = comando.ExecuteReader();
+            this.tablaPersonas.Load(this.lector);
+            this.lector.Close();
+            this.connection.Close();
+        }
+
+        private void Conectar()
+        {
+            connection = new SqlConnection(Properties.Settings.Default.Conexion);
+            connection.Open();
+            this.comando = new SqlCommand();
+            this.comando.Connection = connection;
         }
 
         private void cargarArchivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,27 +121,59 @@ namespace AdminPersonas
         private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Nos conectamos al SQL
-            connection = new SqlConnection(Properties.Settings.Default.Conexion);
+            
             try
             {
-                connection.Open();
-                MessageBox.Show("Exito");
-                this.comando = new SqlCommand();
-                this.comando.Connection = connection;
+                this.Conectar();
                 this.comando.CommandType = CommandType.Text;
                 this.comando.CommandText = "SELECT TOP 1000[id] ,[nombre] ,[apellido] ,[edad] FROM[personas_bd].[dbo].[personas]";
                 this.lector = comando.ExecuteReader();
                 while (lector.Read() != false)
                 {
-                    MessageBox.Show((string)lector[0] (string)lector[1] (string)lector[2] (int)lector[3]);
+                    MessageBox.Show(lector[0].ToString() + " - " +  lector[1].ToString() + " - " + 
+                        lector[2].ToString() + " - " + lector[3].ToString());
                 }
                 connection.Close();
             }
-            catch( Exception a)
+            catch(Exception a)
             {
                 MessageBox.Show(a.Message);
             }
             
+        }
+
+        private void traerTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                this.Conectar();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "SELECT * FROM[personas_bd].[dbo].[personas]";
+                this.lector = comando.ExecuteReader();
+                frmVisorPersona frm = new frmVisorPersona(this.lista);
+
+
+                //Se genera un nuevo objeto persona por cada elemento en la lista
+                while (lector.Read() != false)
+                {
+                         Persona nuevaPersonita = new Persona(lector[1].ToString(), lector[2].ToString(), (int)lector[3]);
+                         this.lista.Add(nuevaPersonita);
+                       
+                }
+
+                //Lo cargo al visor
+
+                frm.ActualizarListadoPersonas();
+                frm.ShowDialog();
+                lista = frm.miListaPersonas;
+                connection.Close();
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+           
         }
     }
 }
