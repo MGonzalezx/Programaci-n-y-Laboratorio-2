@@ -23,6 +23,7 @@ namespace AdminPersonas
         SqlCommand comando;
         SqlDataReader lector;
         DataTable tablaPersonas;
+        SqlDataAdapter adapter;
 
         public FrmPrincipal()
         {
@@ -33,18 +34,41 @@ namespace AdminPersonas
             this.lista = new List<Persona>();
             this.tablaPersonas = new DataTable("Personas");
             this.CargarDataTable();
+            this.comando = new SqlCommand();
+            this.comando.Connection = connection;
+            this.comando.CommandType = CommandType.Text;
+            this.comando.CommandText = "select * from personas";
+            this.adapter = new SqlDataAdapter(comando.CommandText, connection);
+            adapter.Fill(tablaPersonas);
+            adapter.InsertCommand = new SqlCommand("INSERT INTO [personas_bd].[dbo].[personas] values (@p1, @p2, @p3)", connection);
+            adapter.UpdateCommand = new SqlCommand("UPDATE [personas_bd].[dbo].[personas] set [nombre] = @p1, [apellido] = @p2, [edad] = @p3 WHERE [ID] = @p4", connection);
+            adapter.DeleteCommand = new SqlCommand("DELETE FROM [personas_bd].[dbo].[personas] WHERE [ID] = @p4", connection);
+
+            adapter.InsertCommand.Parameters.Add("@p1", SqlDbType.VarChar,50,"nombre");
+            adapter.InsertCommand.Parameters.Add("@p2", SqlDbType.VarChar, 50, "apellido");
+            adapter.InsertCommand.Parameters.Add("@p3", SqlDbType.Int, 10, "edad");
             
+
+            adapter.UpdateCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "nombre");
+            adapter.UpdateCommand.Parameters.Add("@p2", SqlDbType.VarChar, 50, "apellido");
+            adapter.UpdateCommand.Parameters.Add("@p3", SqlDbType.Int, 10, "edad");
+            adapter.UpdateCommand.Parameters.Add("@p4", SqlDbType.Int, 4, "ID");
+
+
+            adapter.DeleteCommand.Parameters.Add("@p4", SqlDbType.Int, 4, "ID");
             
+           
+
         }
 
         private void CargarDataTable()
         {
             this.Conectar();
-            this.comando.CommandType = CommandType.Text;
-            this.comando.CommandText = "SELECT TOP 1000[id] ,[nombre] ,[apellido] ,[edad] FROM[personas_bd].[dbo].[personas]";
-            this.lector = comando.ExecuteReader();
-            this.tablaPersonas.Load(this.lector);
-            this.lector.Close();
+            //this.comando.CommandType = CommandType.Text;
+            //this.comando.CommandText = "SELECT TOP 1000[id] ,[nombre] ,[apellido] ,[edad] FROM[personas_bd].[dbo].[personas]";
+            //this.lector = comando.ExecuteReader();
+            //this.tablaPersonas.Load(this.lector);
+            //this.lector.Close();
             this.connection.Close();
         }
 
@@ -174,6 +198,35 @@ namespace AdminPersonas
                 MessageBox.Show(a.Message);
             }
            
+        }
+
+        private void bDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visualizarDataTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVisorDataTable frm = new frmVisorDataTable(this.tablaPersonas);
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            //implementar
+            frm.ShowDialog();
+            this.tablaPersonas = frm.MiDataTable;
+        }
+
+        private void sincronizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                adapter.Update(tablaPersonas);
+            }
+            catch(Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+            
         }
     }
 }

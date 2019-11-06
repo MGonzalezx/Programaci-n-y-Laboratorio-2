@@ -99,8 +99,8 @@ namespace Main
                 Console.WriteLine(e.Message);
             }
             Console.WriteLine(uni.ToString());
-            //Console.ReadKey();
-            //Console.Clear();
+            Console.ReadKey();
+            Console.Clear();
             try
             {
                 Universidad.Guardar(uni);
