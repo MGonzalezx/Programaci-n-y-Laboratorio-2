@@ -32,15 +32,7 @@
             // 
             // btnAgregar
             // 
-            //this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            //this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            //this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            //this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // frmVisorDataTable
             // 

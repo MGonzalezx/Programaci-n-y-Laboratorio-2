@@ -88,6 +88,7 @@ namespace AdminPersonas
 
         protected override void btnModificar_Click(object sender, EventArgs e)
         {
+            //base.btnModificar.Click -= new EventHandler(btnModificar_Click);
             int index = this.lstVisor.SelectedIndex;
             if (index != -1)
             {
@@ -116,7 +117,7 @@ namespace AdminPersonas
 
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            //base.btnEliminar.Click -= new EventHandler(btnEliminar_Click);
             int index = this.lstVisor.SelectedIndex;
             if(index != -1 )
             {
@@ -126,5 +127,7 @@ namespace AdminPersonas
             this.ActualizarListadoPersonasData();
             }
         }
+
+       
     }
 }

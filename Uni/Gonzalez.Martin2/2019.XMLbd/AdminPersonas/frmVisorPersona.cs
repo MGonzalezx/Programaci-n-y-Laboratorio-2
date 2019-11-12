@@ -22,6 +22,7 @@ namespace AdminPersonas
         {
             InitializeComponent();
             miListaPersonas = new List<Persona>();
+            
 
         }
 
@@ -76,6 +77,7 @@ namespace AdminPersonas
 
         protected virtual void btnModificar_Click(object sender, EventArgs e)
         {
+            
             frmPersona frm = new frmPersona(this.miListaPersonas[this.lstVisor.SelectedIndex]);
             frm.StartPosition = FormStartPosition.CenterScreen;
 
@@ -108,6 +110,7 @@ namespace AdminPersonas
 
         protected virtual void btnEliminar_Click(object sender, EventArgs e)
         {
+
             frmPersona frm = new frmPersona(this.miListaPersonas[this.lstVisor.SelectedIndex]);
             frm.StartPosition = FormStartPosition.CenterScreen;
 
@@ -134,6 +137,23 @@ namespace AdminPersonas
                 }
                 this.ActualizarListadoPersonas();
             }
+        }
+
+        private void frmVisorPersona_Load(object sender, EventArgs e)
+        {
+            //Cuando apretamos el btnAgregar llama al evento para agregar
+            this.btnAgregar.Click += new EventHandler(btnAgregar_Click);
+            
+        }
+
+        private void lstVisor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.btnModificar.Click -= new EventHandler(btnModificar_Click);
+            this.btnEliminar.Click -= new EventHandler(btnEliminar_Click);
+
+            this.btnEliminar.Click += new EventHandler(btnEliminar_Click);
+            this.btnModificar.Click += new EventHandler(btnModificar_Click);
+
         }
     }
 }
