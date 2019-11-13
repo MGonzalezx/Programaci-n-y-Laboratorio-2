@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
 using System.Data.SqlClient;
+using System.Threading;
 using Entidades;
 
 namespace AdminPersonas
@@ -220,13 +221,38 @@ namespace AdminPersonas
         {
             try
             {
-                adapter.Update(tablaPersonas);
+
+                Thread hilo = new Thread(this.ActualizarThread);
+                hilo.Start();
             }
-            catch(Exception a)
+            catch (Exception a)
             {
                 MessageBox.Show(a.Message);
             }
-            
+
+            //try
+            //{
+
+            //    adapter.Update(tablaPersonas);
+            //}
+            //catch(Exception a)
+            //{
+            //    MessageBox.Show(a.Message);
+            //}
+
+        }
+
+        private void ActualizarThread()
+        {
+            try
+            {
+                adapter.Update(tablaPersonas);
+                Thread.Sleep(30);
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
         }
     }
 }

@@ -155,5 +155,6 @@ namespace AdminPersonas
             this.btnModificar.Click += new EventHandler(btnModificar_Click);
 
         }
+
     }
 }
