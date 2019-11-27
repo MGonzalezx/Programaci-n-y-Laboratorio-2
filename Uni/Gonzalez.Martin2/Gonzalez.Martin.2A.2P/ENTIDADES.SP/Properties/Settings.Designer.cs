@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Clase_13.MisEntidades.Properties {
+namespace ENTIDADES.SP.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
