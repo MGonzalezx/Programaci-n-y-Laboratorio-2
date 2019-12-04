@@ -13,6 +13,7 @@ namespace ENTIDADES.SP
         protected string _provinciaOrigen;
 
         public string Nombre { get { return "Manzana"; } }
+        public string MiProvincia { get {return this._provinciaOrigen; } set { this._provinciaOrigen = value; } }
 
         public Manzana(string color, double peso,string provinciaOrigen) : base(color,peso)
         {
@@ -50,7 +51,7 @@ namespace ENTIDADES.SP
             return retorno;
         }
 
-        bool IDeserializar.Xml(string path, out object Fruta)
+        bool IDeserializar.Xml(string path, out Fruta Fruta)
         {
             bool retorno = false;
             Fruta = null;
@@ -71,5 +72,7 @@ namespace ENTIDADES.SP
             }
             return retorno;
         }
+
+        
     }
 }

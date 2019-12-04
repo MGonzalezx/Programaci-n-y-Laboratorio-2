@@ -8,6 +8,6 @@ namespace ENTIDADES.SP
 {
     public interface IDeserializar
     {
-        bool Xml(string path, out object Fruta);
+        bool Xml(string path, out Fruta Fruta);
     }
 }

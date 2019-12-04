@@ -19,7 +19,7 @@ namespace Entidades
         {
             this.libros = new List<Libro>();
         }
-        private Biblioteca(int capacidad)
+        private Biblioteca(int capacidad) : this()
         {
             this.capacidad = capacidad;
         }
@@ -33,12 +33,12 @@ namespace Entidades
             {
                 if (auxLibro is Manual)
                 {
-                    gananciaManual += PrecioDeManuales;
+                    gananciaManual += (Single)(Manual)auxLibro;
 
                 }
                 else if (auxLibro is Novela)
                 {
-                    gananciaNovela += PrecioDeNovelas;
+                    gananciaNovela += (Single)(Novela)auxLibro;
                 }
                 
             }
@@ -63,9 +63,9 @@ namespace Entidades
             string biblioteca = " ";
             string ganancia = " ";
             ganancia = "Total por manuales: " + b.PrecioDeManuales.ToString()
-                    + " Total por novelas: " + b.PrecioDeNovelas + " Total: " + b.PrecioTotal;
-            biblioteca = "********************************\n" + "Listado de Libros" +
-                "************************************\n";
+                    + "\nTotal por novelas: " + b.PrecioDeNovelas + "\nTotal: " + b.PrecioTotal;
+            biblioteca = "\n********************************\n" + "Listado de Libros \n" +
+                "********************************\n";
             foreach (Libro auxlibro in b.libros)
             {
 
@@ -77,8 +77,9 @@ namespace Entidades
 
         public static implicit operator Biblioteca(int capacidad)
         {
-            Biblioteca biblioteca = new Biblioteca(capacidad);
-            return biblioteca;
+            return new Biblioteca(capacidad);
+            //Biblioteca biblioteca = new Biblioteca(capacidad);
+            //return biblioteca;
         }
 
         public static bool operator ==(Biblioteca b, Libro l)
@@ -99,13 +100,13 @@ namespace Entidades
             return !(b == l);
         }
 
+
         public static Biblioteca operator +(Biblioteca b, Libro l)
         {
-            bool retorno = false;
             if (b.libros.Count < b.capacidad && b != l)
             {
                 b.libros.Add(l);
-               retorno = true;
+
             }
             else
             {

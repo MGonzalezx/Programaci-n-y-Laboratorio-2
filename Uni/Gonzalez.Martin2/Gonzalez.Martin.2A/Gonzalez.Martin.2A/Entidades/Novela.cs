@@ -10,15 +10,16 @@ namespace Entidades
     {
         public EGenero genero;
 
-        public Novela(string titulo, float precio, Autor autor, EGenero genero) : base(titulo,autor.MiNombre,autor.MiApellido,precio)
+        public Novela(string titulo, float precio, Autor autor, EGenero genero) : base(precio,titulo,autor)
         {
             this.genero = genero;
         }
 
         public override string ToString()
         {
-            return "Autor: " + this.autor.MiNombre + ", " + this.autor.MiApellido + " - Titulo: " + this.titulo +
-                 " - Precio: " + this.precio.ToString() + " - Genero: " + this.genero;
+            return (string)this + " Genero: " + this.genero;
+            //return "Autor: " + this.autor + " - Titulo: " + this.titulo +
+            //     " - Precio: " + this.precio.ToString() + " - Genero: " + this.genero;
         }
 
         public override bool Equals(object obj)

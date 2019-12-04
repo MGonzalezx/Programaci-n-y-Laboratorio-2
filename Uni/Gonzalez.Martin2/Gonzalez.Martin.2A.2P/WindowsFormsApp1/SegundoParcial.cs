@@ -139,8 +139,14 @@ namespace SP
         private void btnPunto4_Click(object sender, EventArgs e)
         {
             //implementar estructura de manejo de excepciones
-
-            this.c_duraznos += this._durazno;
+            try
+            {
+                this.c_duraznos += this._durazno;
+            }
+            catch(CajonLlenoException)
+            {
+                throw new CajonLlenoException();
+            }
 
         }
 
@@ -151,9 +157,13 @@ namespace SP
         private void btnPunto5_Click(object sender, EventArgs e)
         {
             //Asociar manejador de eventos y crearlo en la clase Manejadora (de instancia).
+            Manejadora manejador = new Manejadora();
 
+            this.c_bananas.MiEvento += new Cajon<Banana>.DelegadoEventoPrecio(manejador.DelegadoEventoPrecio);
             this.c_bananas += new Banana("verde", 2, "argentina");
             this.c_bananas += new Banana("amarilla", 4, "ecuador");
+            
+           
         }
 
         //Obtener de la base de datos (sp_lab_II) el listado de frutas:

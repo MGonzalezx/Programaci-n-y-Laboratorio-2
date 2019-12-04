@@ -15,31 +15,31 @@ namespace ENTIDADES.SP
         protected List<T> _elementos;
         protected double _precioUnitario;
 
+        public delegate void DelegadoEventoPrecio(double precio);
+        public event DelegadoEventoPrecio MiEvento;
+
         public List<T> Elementos { get { return this._elementos; } }
-        public double PrecioTotal { get { return this._precioUnitario * _elementos.Count; }
+        public double PrecioTotal
+        {
+            get
+            {
+                double precioTotal = this._precioUnitario * this._elementos.Count;
+                   if (precioTotal > 55)
+                {
+                    this.MiEvento(precioTotal);
 
-            set {
-                if (value > 18000 && value <= 30000)
-                {
-                    LimitePrecioFinal(value, this);
                 }
-                else if (value > 30000)
-                {
-                    EmpleadoEventArgs miEmpleadoEventArgs = new EmpleadoEventArgs();
-                    miEmpleadoEventArgs.SueldoAsignar = value;
-                    this.LimiteSueldoMejorado(this, miEmpleadoEventArgs);
-                }
-                else
-                {
-                    this.sueldo = value;
-                }
+                return precioTotal;
             }
-                catch (Exception)
-                {
 
-                }
-}
+            set
+            {
+
+            }
+
+
         }
+
 
         public Cajon()
         {
@@ -70,6 +70,8 @@ namespace ENTIDADES.SP
             return DepositoGenerico + generico;
         }
 
+
+
         public bool Xml(string path)
         {
             bool retorno = false;
@@ -94,25 +96,22 @@ namespace ENTIDADES.SP
             return retorno;
         }
 
-        public static bool operator +(Cajon<T> d, T a)
+        public static Cajon<T> operator +(Cajon<T> d, T a)
         {
-            try
-            {
 
-                bool retorno = false;
-                if (d._elementos.Count < d._capacidad)
-                {
-                    d._elementos.Add(a);
-                    return retorno = true;
-                }
-                return retorno;
+
+            if (d._elementos.Count < d._capacidad)
+            {
+                d._elementos.Add(a);
+
             }
-            catch(Exception )
+            else
             {
                 throw new CajonLlenoException();
             }
-            
-            
+            return d;
+
+
         }
     }
 }

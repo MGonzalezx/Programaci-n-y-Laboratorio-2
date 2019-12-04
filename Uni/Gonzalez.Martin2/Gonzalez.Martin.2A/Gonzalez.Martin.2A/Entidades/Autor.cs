@@ -11,8 +11,8 @@ namespace Entidades
         private string apellido;
         private string nombre;
 
-        public string MiNombre { get { return this.nombre; } set { this.nombre = value ; } }
-        public string MiApellido { get { return this.apellido; } set { this.apellido = value; } }
+        //public string MiNombre { get { return this.nombre; } set { this.nombre = value ; } }
+        //public string MiApellido { get { return this.apellido; } set { this.apellido = value; } }
 
         public Autor(string nombre, string apellido)
         {

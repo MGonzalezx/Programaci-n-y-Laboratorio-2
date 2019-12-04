@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENTIDADES.SP
 {
-    class CajonLlenoException : Exception
+    public class CajonLlenoException : Exception
     {
         public CajonLlenoException() : base("El cajon esta en capacidad maxima")
         {

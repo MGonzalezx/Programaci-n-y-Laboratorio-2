@@ -18,13 +18,12 @@ namespace Entidades
         {
             get
             {
-                int retorno = 0;
-                if(cantidadDePaginas == 0)
+              
+                if(this.cantidadDePaginas == 0)
                 {
-                    int numero = Libro.generadorDePaginas.Next(10,570);
-                    retorno = numero;
+                    this.cantidadDePaginas = Libro.generadorDePaginas.Next(10,571);
                 }
-                return retorno;
+                return this.cantidadDePaginas;
             }
 
         }
@@ -32,26 +31,24 @@ namespace Entidades
         static Libro()
         {
             Libro.generadorDePaginas = new Random();
+        }
 
-        }
-        public Libro(float precio, string titulo, Autor autor) :this(titulo,autor.MiApellido,autor.MiNombre,precio)
+        public Libro(float precio, string titulo, Autor autor) 
         {
-            
-        }
-        public Libro(string titulo, string apellido, string nombre, float precio) 
-        {
-            
             this.titulo = titulo;
             this.precio = precio;
-            this.autor.MiApellido = apellido;
-            this.autor.MiNombre = nombre;
+            this.autor = autor;
+        }
+        public Libro(string titulo, string apellido, string nombre, float precio) : this(precio,titulo, new Autor(nombre,apellido))
+        {
+           
             
         }
 
         private static string Mostrar(Libro l)
         {
-            return "Autor: " + l.autor.MiNombre + ", " + l.autor.MiApellido + " - Titulo: " + l.titulo +
-                " - Precio: " + l.precio.ToString() + " - Cantidad de Paginas: " + l.cantidadDePaginas;
+            return "Autor: " + l.autor + " - Titulo: " + l.titulo +
+                " - Precio: " + l.precio.ToString() + " - Cantidad de Paginas: " + l.CantidadDePaginas;
         }
 
         public static explicit operator string(Libro l)

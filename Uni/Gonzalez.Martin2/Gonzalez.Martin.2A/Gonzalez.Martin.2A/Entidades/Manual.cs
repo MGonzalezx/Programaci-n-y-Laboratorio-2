@@ -17,8 +17,9 @@ namespace Entidades
 
         public override string ToString()
         {
-            return "Autor: " + this.autor.MiNombre + ", " + this.autor.MiApellido + " - Titulo: " + this.titulo +
-                 " - Precio: " + this.precio.ToString() + " - Tipo: " + this.tipo;
+            return (string)this + " Tipo: " + this.tipo;
+            //return "Autor: " + this.autor + " - Titulo: " + this.titulo +
+            //     " - Precio: " + this.precio.ToString() + " - Tipo: " + this.tipo;
         }
 
         public override bool Equals(object obj)
