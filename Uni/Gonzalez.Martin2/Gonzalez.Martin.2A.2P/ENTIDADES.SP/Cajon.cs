@@ -9,14 +9,18 @@ using System.Xml;
 
 namespace ENTIDADES.SP
 {
+    [XmlInclude(typeof(Manzana))]
+
     public class Cajon<T> : ISerializar
     {
         protected int _capacidad;
         protected List<T> _elementos;
         protected double _precioUnitario;
-
-        public delegate void DelegadoEventoPrecio(double precio);
-        public event DelegadoEventoPrecio MiEvento;
+        [XmlIgnore]
+        public EventoPrecio _eventoPrecio;
+        public delegate void EventoPrecio(double precio, Cajon<T> cajon);
+        //public delegate void DelegadoEventoPrecio(double precio);
+        //public event DelegadoEventoPrecio MiEvento;
 
         public List<T> Elementos { get { return this._elementos; } }
         public double PrecioTotal
@@ -26,24 +30,18 @@ namespace ENTIDADES.SP
                 double precioTotal = this._precioUnitario * this._elementos.Count;
                    if (precioTotal > 55)
                 {
-                    this.MiEvento(precioTotal);
+                    this._eventoPrecio(precioTotal, this);
 
                 }
                 return precioTotal;
             }
-
-            set
-            {
-
-            }
-
 
         }
 
 
         public Cajon()
         {
-            _elementos = new List<T>();
+            this._elementos = new List<T>();
         }
         public Cajon(int capacidad) : this()
         {
@@ -102,7 +100,7 @@ namespace ENTIDADES.SP
 
             if (d._elementos.Count < d._capacidad)
             {
-                d._elementos.Add(a);
+                d.Elementos.Add(a);
 
             }
             else

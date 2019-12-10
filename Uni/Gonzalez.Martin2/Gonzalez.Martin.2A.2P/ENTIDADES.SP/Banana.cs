@@ -21,7 +21,7 @@ namespace ENTIDADES.SP
 
         public override string ToString()
         {
-            return base.FrutaToString() + "Pais Origen: " + this._paisOrigen + "Tiene Carozo" + this.TieneCarozo;
+            return base.FrutaToString() + "Pais Origen: " + this._paisOrigen + " Tiene Carozo" + this.TieneCarozo;
         }
     }
 }

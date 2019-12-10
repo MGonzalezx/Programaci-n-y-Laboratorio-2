@@ -45,6 +45,7 @@
     <Compile Include="CajonLleno.cs" />
     <Compile Include="Durazno.cs" />
     <Compile Include="Eventos.cs" />
+    <Compile Include="Extensora.cs" />
     <Compile Include="Fruta.cs" />
     <Compile Include="IDeserializar.cs" />
     <Compile Include="ISerializar.cs" />
