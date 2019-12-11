@@ -23,6 +23,7 @@ namespace ENTIDADES.SP
         //public event DelegadoEventoPrecio MiEvento;
 
         public List<T> Elementos { get { return this._elementos; } }
+        public int MiCapacidad { get {return this._capacidad; } set {this._capacidad = value; } }
         public double PrecioTotal
         {
             get

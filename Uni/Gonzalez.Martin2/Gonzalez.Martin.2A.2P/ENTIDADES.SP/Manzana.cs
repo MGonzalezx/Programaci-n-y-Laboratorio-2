@@ -15,6 +15,10 @@ namespace ENTIDADES.SP
         public string Nombre { get { return "Manzana"; } }
         public string MiProvincia { get {return this._provinciaOrigen; } set { this._provinciaOrigen = value; } }
 
+        public Manzana() : this("vacio", 0, "vacio")
+        {
+        }
+
         public Manzana(string color, double peso,string provinciaOrigen) : base(color,peso)
         {
             this._provinciaOrigen = provinciaOrigen;
