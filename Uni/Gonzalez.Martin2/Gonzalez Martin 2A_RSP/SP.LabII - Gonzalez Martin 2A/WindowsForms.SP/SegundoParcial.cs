@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 using Entidades;
 
 
@@ -130,7 +132,7 @@ namespace WindowsForms.SP
         private void btnPunto4_Click(object sender, EventArgs e)
         {
             //Asociar manejador de eventos (c_gomas_EventoPrecio) aquí            
-
+            this.c_gomas.EventoPrecio += new Cartuchera<Goma>.DelegadoEventoPrecio(this.c_gomas_EventoPrecio);
             this.c_gomas += new Goma(false, "Faber-Castell", 31);
         }
 
@@ -157,11 +159,28 @@ namespace WindowsForms.SP
             //extensión por defecto -> .log
             //nombre de archovo (defecto) -> tickets
 
-            DialogResult rta = DialogResult.Cancel;//Reemplazar por la llamada al método correspondiente del OpenFileDialog
+            this.openFileDialog1.Title = "Abrir archivo de tickets";
+            this.openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            this.openFileDialog1.Filter = "Archivos .log | *.log";
+            this.openFileDialog1.DefaultExt = "log";
+            this.openFileDialog1.FileName = "tickets";
+
+            DialogResult rta = this.openFileDialog1.ShowDialog();//Reemplazar por la llamada al método correspondiente del OpenFileDialog
 
             if (rta == System.Windows.Forms.DialogResult.OK)
             {
                 //leer el archivo seleccionado por el cliente y mostrarlo en txtVisorTickest
+                try
+                {
+                    using (StreamReader lector = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\tickets.log"))
+                    {
+                        this.txtVisorTickets.Text = lector.ReadToEnd();
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Error al leer el archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -202,8 +221,11 @@ namespace WindowsForms.SP
         private void btnPunto6_Click(object sender, EventArgs e)
         {
             //Configurar el SqlConnection
+            this.cn = new SqlConnection(Properties.Settings.Default.Conexion);
 
-            //Configurar el SqlDataAdapter (y su selectCommand)                        
+            //Configurar el SqlDataAdapter (y su selectCommand)
+            string comando = "SELECT * FROM [sp_lab_II_utiles].[dbo].[utiles]";
+            this.da = new SqlDataAdapter(comando, this.cn);
 
             this.da.Fill(this.dt);
             this.dataGridView1.DataSource = this.dt;
@@ -213,24 +235,61 @@ namespace WindowsForms.SP
         private void btnPunto7_Click(object sender, EventArgs e)
         {
             //Configurar el insertCommand del SqlDataAdapter y sus parametros
+            string comando = "INSERT INTO [sp_lab_II_utiles].[dbo].[utiles] VALUES(@p1, @p2, @p3)";
+            this.da.InsertCommand = new SqlCommand(comando, this.cn);
+
+            this.da.InsertCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "marca");
+            this.da.InsertCommand.Parameters.Add("@p2", SqlDbType.Float, 10, "precio");
+            this.da.InsertCommand.Parameters.Add("@p3", SqlDbType.VarChar, 50, "tipo");
 
             //Agregar los utiles del formulario al dataTable
+            DataRow fila = this.dt.NewRow();
+
+            fila[1] = this.lapiz.marca;
+            fila[2] = this.lapiz.precio;
+            fila[3] = "lapiz";
+            this.dt.Rows.Add(fila);
+
+            fila = this.dt.NewRow();
+            fila[1] = this.goma.marca;
+            fila[2] = this.goma.precio;
+            fila[3] = "goma";
+            this.dt.Rows.Add(fila);
+
+            fila = this.dt.NewRow();
+            fila[1] = this.sacapunta.marca;
+            fila[2] = this.sacapunta.precio;
+            fila[3] = "sacapunta";
+            this.dt.Rows.Add(fila);
         }
 
         //Eliminar del dataTable el primer registro
         private void btnPunto8_Click(object sender, EventArgs e)
         {
             //Configurar el deleteCommand del SqlDataAdapter y sus parametros
+            this.da.DeleteCommand = new SqlCommand("DELETE FROM [sp_lab_II_utiles].[dbo].[utiles] WHERE id = @p1", this.cn);
+
+            this.da.DeleteCommand.Parameters.Add("@p1", SqlDbType.Int, 10, "id");
 
             //Borrar el primer registro del dataTable
+            DataRow fila = this.dt.Rows[0];
+            fila.Delete();
         }
 
         //Modificar del dataTable el ultimo registro, cambiarlo por: marca:barrilito; precio:72
         private void btnPunto9_Click(object sender, EventArgs e)
         {
             //Configurar el updateCommand del SqlDataAdapter y sus parametros
+            string comando = "UPDATE [sp_lab_II_utiles].[dbo].[utiles] SET marca = @p1, precio = @p2, tipo = @p3";
+            this.da.UpdateCommand = new SqlCommand(comando, this.cn);
+
+            this.da.UpdateCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "marca");
+            this.da.UpdateCommand.Parameters.Add("@p2", SqlDbType.Float, 10, "precio");
+            this.da.UpdateCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "tipo");
 
             //Modificar el ultimo registro del dataTable
+            this.dt.Rows[this.dt.Rows.Count - 1]["marca"] = "barrilito";
+            this.dt.Rows[this.dt.Rows.Count - 1]["precio"] = 72;
         }
 
         //Sincronizar los cambios (sufridos en el dataTable) con la base de datos
@@ -239,7 +298,7 @@ namespace WindowsForms.SP
             try
             {
                 //Sincronizar el SqlDataAdapter con la BD
-
+                this.da.Update(this.dt);
                 MessageBox.Show("Datos sincronizados!!!");
             }
             catch (Exception ex)

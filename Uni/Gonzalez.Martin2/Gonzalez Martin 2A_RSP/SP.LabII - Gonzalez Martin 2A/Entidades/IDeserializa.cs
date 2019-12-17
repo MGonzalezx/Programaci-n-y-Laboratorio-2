@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class CartucheraLlenaException : Exception
+    public interface IDeserializa
     {
-        public CartucheraLlenaException(): base()
-        {
-        }
+        bool Xml(out Lapiz lapiz);
     }
 }

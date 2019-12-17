@@ -42,12 +42,15 @@
   <ItemGroup>
     <Compile Include="Cartuchera.cs" />
     <Compile Include="CartucheraLlenaException.cs" />
+    <Compile Include="CartucheraLlenaExtension.cs" />
     <Compile Include="ETipoTrazo.cs" />
     <Compile Include="Eventos.cs" />
-    <Compile Include="Extensora.cs" />
     <Compile Include="Goma.cs" />
+    <Compile Include="IDeserializa.cs" />
+    <Compile Include="ISerializa.cs" />
     <Compile Include="Lapiz.cs" />
     <Compile Include="Sacapunta.cs" />
+    <Compile Include="Ticketeadora.cs" />
     <Compile Include="Utiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

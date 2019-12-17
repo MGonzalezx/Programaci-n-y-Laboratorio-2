@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
-using System.Xml;
+
 
 namespace Entidades
 {
-    public class Cartuchera<Utiles> 
+    public class Cartuchera<T> where T : Utiles
     {
         protected int capacidad;
-        protected List<Utiles> elementos;
-        [XmlIgnore]
-        public EventoPrecios EventoPrecio;
-        public delegate void EventoPrecios(double precio, Cartuchera<Utiles> utiles);
+        protected List<T> elementos;
 
-        public List<Utiles> Elementos { get { return this.elementos; } }
-        public int PrecioTotal { get
+        public delegate void DelegadoEventoPrecio(object sender, EventArgs e);
+        public event DelegadoEventoPrecio EventoPrecio;
+
+        public List<T> Elementos { get { return this.elementos; } }
+        public double PrecioTotal { get
             {
-                double precioTotal = 
-                if (precioTotal > 85)
+                double precioTotal = 0;
+                foreach (T elemento in this.Elementos)
                 {
-                    this.EventoPrecio(precioTotal, this);
-
+                    precioTotal += elemento.precio;
                 }
+
                 return precioTotal;
             }
 
@@ -32,7 +31,7 @@ namespace Entidades
 
         public Cartuchera()
         {
-            this.elementos = new List<Utiles>();
+            this.elementos = new List<T>();
         }
 
         public Cartuchera(int capacidad) : this()
@@ -56,20 +55,27 @@ namespace Entidades
             return DepositoGenerico + generico;
         }
 
-        public static Cartuchera<Utiles> operator +(Cartuchera<Utiles> d, Utiles a)
+        public static Cartuchera<T> operator +(Cartuchera<T> cartuchera, T util)
         {
 
 
-            if (d.elementos.Count < d.capacidad)
+            if (cartuchera.capacidad > cartuchera.Elementos.Count)
             {
-                d.Elementos.Add(a);
-
+                cartuchera.Elementos.Add(util);
+                if (cartuchera is Cartuchera<Goma>)
+                {
+                    if (cartuchera.PrecioTotal > 85)
+                    {
+                        cartuchera.EventoPrecio(cartuchera, new EventArgs());
+                    }
+                }
             }
             else
             {
                 throw new CartucheraLlenaException();
             }
-            return d;
+
+            return cartuchera;
 
 
         }

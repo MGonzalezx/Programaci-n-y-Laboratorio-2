@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class CartucheraLlenaException : Exception
+    public interface ISerializa
     {
-        public CartucheraLlenaException(): base()
-        {
-        }
+        bool Xml();
+
+        string Path { get; }
     }
 }
